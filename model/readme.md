@@ -14,6 +14,10 @@
         - Do sentiment analysis on comments
         - 输入2个月的时间窗口（1月1号-2月30号，1月2号到3月1号，1月3号到3月2号）
 
+    - 训练用数据结构
+        - 分类数据集结果：[`after2monthdata_20%_with_trend.csv`](https://github.com/dengxw66/Multimodal_MKT/model/after2monthdata_20%_with_trend.csv)，其中的["trend"]为标签。
+        - 回归数据集结果：[`after2monthdata_20%.csv`](https://github.com/dengxw66/Multimodal_MKT/model/after2monthdata_20%.csv)，其中的["proportion"]为标签。
+
 2. 输出：
     1. 预测具体数值比例。不是二分类。
         - 考虑到精度，这里也同时采用了拟合和分类两个任务都做了。
@@ -40,9 +44,10 @@
 ## 2.1 复现步骤
 
 
-1. 数据处理逻辑，见文件：[`label.ipynb`](https://github.com/dengxw66/Multimodal_MKT/model/label.ipynb)
-    - 分类数据集结果：[`after2monthdata_20%_with_trend.csv`](https://github.com/dengxw66/Multimodal_MKT/model/after2monthdata_20%_with_trend.csv)，其中的["trend"]为标签。
-    - 回归数据集结果：[`after2monthdata_20%.csv`](https://github.com/dengxw66/Multimodal_MKT/model/after2monthdata_20%.csv)，其中的["proportion"]为标签。
+1. 数据处理逻辑，一共两步：
+- 首先逐步运行：[`data.ipynb`](https://github.com/dengxw66/Multimodal_MKT/model/data.ipynb)。包含了视频切割，图片聚类，文本清洗等步骤。
+- 然后逐步运行：[`label.ipynb`](https://github.com/dengxw66/Multimodal_MKT/model/label.ipynb)。负责制作分类数据集[`after2monthdata_20%.csv`](https://github.com/dengxw66/Multimodal_MKT/model/after2monthdata_20%.csv)和回归数据集[`after2monthdata_20%.csv`](https://github.com/dengxw66/Multimodal_MKT/model/after2monthdata_20%.csv)。
+
 
 2. 训练代码
     -  做分类任务见文件：[`train_classification.ipynb`](https://github.com/dengxw66/Multimodal_MKT/model/train_classification.ipynb)逐次运行文件即可。
