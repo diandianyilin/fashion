@@ -88,8 +88,21 @@ for i in range(num_image):
     image_name = image_path[image_path.rfind('/')+1:image_path.rfind('.')]
     print(i, '/', num_image, image_name)
 
-    with Image.open(image_path) as img:
-        img = img.convert("RGB")
+    # with Image.open(image_path) as img:
+    #     img = img.convert("RGB")
+
+    try:
+        with Image.open(image_path) as img:
+            img = img.convert("RGB")
+    except UnidentifiedImageError:
+        print(f"Cannot identify image file {image_path}. Deleting and skipping.")
+        os.remove(image_path)
+        continue
+    except OSError as e:
+        print(f"Cannot open image file {image_path}. Skipping. Error: {e}")
+        os.remove(image_path)
+        continue
+
 
     if args.gt_dir is not None:
         gt_path = gt_list[i]
