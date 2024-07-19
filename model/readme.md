@@ -41,7 +41,7 @@ mlp就是将numerical_feature_dim的3也映射为1024大小，方便对齐image�
 4. 最后使用mlp对最后一天的特征做预测或分类
 
 关键问题：
-- numerical variables为什么使用mlp？为什么在cross-attention后，lstm前融合？
+- numerical variables为什么使用mlp？
     - 因为numerical variables变量很少，不用使用encoder提取特征了。所以使用常见的mlp做特征格式对齐即可。
 - numerical variables为什么在cross-attention后，lstm前融合？
     - 因为cross-attention是图片和文本特征融合，这其中不涉及numerical variables。所以numerical variables是在多模态融合完成后，再一起送入时序融合步骤。
