@@ -73,10 +73,10 @@ mlp就是将numerical_feature_dim的3也映射为1024大小，方便对齐image�
 ## 2.2 实验结果
 
 1. 使用总数据的0.2%实验：
-    - 做分类任务：
+    - 做拟合任务：
         - 见文件：[`train_classification.ipynb`](https://github.com/dengxw66/Multimodal_MKT/model/train_classification.ipynb), 测试集Loss: 0.000458289182157993
         - 见文件：[`train_classification_num.ipynb`](https://github.com/dengxw66/Multimodal_MKT/model/train_classification_num.ipynb), 测试集Loss: 0.00033924097693827093
-    - 做拟合任务：
+    - 做分类(-1，0，1)任务：
         - 见文件：[`train_regression.ipynb`](https://github.com/dengxw66/Multimodal_MKT/model/train_regression.ipynb),测试集精度达到100%
         - 见文件：[`train_regression_num.ipynb`](https://github.com/dengxw66/Multimodal_MKT/model/train_regression_num.ipynb)，测试集精度达到100%
 2. 更大数据规模(总数据的1%)实验：见文件：[`tran_test.ipynb`](https://github.com/dengxw66/Multimodal_MKT/model/tran_test.ipynb)，测试集精度达到94%
