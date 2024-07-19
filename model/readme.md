@@ -6,21 +6,22 @@
 ## 1.1 数据结构
 
 1. 输入input：
-    1. 图片和文本。(不考虑音频。视频数据也当作图片数据处理)
+    1. 图片和文本。
         - 图片：尽可能只截取衣服。
         - 文本：仅仅为辅助作用。
+        - (不考虑音频。视频数据也当作图片数据处理)
     2. 其他信息：
-        - 考虑热度popularity等信息结合更加重要。​​numerical information: post #like/#collect/#comment; poster 粉丝数/关注数/获赞总量/笔记数量/。Do sentiment analysis on comments
-            - 本次实验使用的变量有：post_comments,post_like,post_collect
-        - 输入2个月的时间窗口（1月1号-2月30号，1月2号到3月1号，1月3号到3月2号）
+        - 加入​​numerical information: post #like/#collect/#comment; poster 粉丝数/关注数/获赞总量/笔记数量/。sentiment analysis on comments
+            - 本次实验使用的变量有3个：post_comments,post_like,post_collect
+        - 输入的时间窗口定为2个月（1月1号-2月30号，1月2号到3月1号，1月3号到3月2号）
 
     - 训练用数据结构
-        - 分类数据集结果：[`after2monthdata_20%_with_trend.csv`](https://github.com/dengxw66/Multimodal_MKT/model/after2monthdata_20%_with_trend.csv)，其中的["trend"]为标签。
-        - 回归数据集结果：[`after2monthdata_20%.csv`](https://github.com/dengxw66/Multimodal_MKT/model/after2monthdata_20%.csv)，其中的["proportion"]为标签。
+        - 回归数据集：[`after2monthdata_20%.csv`](https://github.com/dengxw66/Multimodal_MKT/model/after2monthdata_20%.csv)，其中的["proportion"]为标签。是一个具体比例数值。
+        - 分类数据集：[`after2monthdata_20%_with_trend.csv`](https://github.com/dengxw66/Multimodal_MKT/model/after2monthdata_20%_with_trend.csv)，其中的["trend"]为标签。是根据proportion占比值的不同数值分布3等分类，从高到底为1，0，-1，代表热度高，热度一般，完全没有热度。
 
 2. 输出output：
     1. 预测具体数值比例。
-        - 考虑到精度，这里实验不仅做了拟合，分类的任务也做了。其中的分类任务是根据占比值的分布等比例3分类，从高到底为1，0，-1，代表热度高，热度一般，完全没有热度。
+        - 考虑到精度，不仅仅做了拟合，也做了分类任务。
     2. 预测时间窗口最后一天在两个月后的占比。（注意是那一整个月的占比）
     3. Label的计算只考虑图片类别，不考虑文本类别。
 
@@ -33,9 +34,10 @@
 </p>
 
 过程：
-1. 一次输入60天的数据，每一天的数据都是一批post（含有成对的image和text，以及numerical variables）
+1. 一次输入60天/2个月的数据，每一天的数据都是一批post（含有成对的image和text，以及numerical variables）
 2. 每天的多模态数据都通过transformer的多个encoder模块，并做cross-attention多模态特征融合，然后将融合的特征与numerical variables的feature对齐拼接。
-3. 然后60天的数据送入一个时序长度为60的LSTM模型做时序融合，输出这60天的最后一天特征。(前59天的时序关系就融合到最后一天里面了)
+mlp就是将numerical_feature_dim的3也映射为1024大小，方便对齐image和text
+3. 然后60天的数据送入一个时序长度为60的LSTM模型做时序融合，输出这60天的最后一天特征。(前59天的时序关系就融合到最后一天里面)
 4. 最后使用mlp对最后一天的特征做预测或分类
 
 关键问题：
@@ -43,6 +45,11 @@
     - 因为numerical variables变量很少，不用使用encoder提取特征了。所以使用常见的mlp做特征格式对齐即可。
 - numerical variables为什么在cross-attention后，lstm前融合？
     - 因为cross-attention是图片和文本特征融合，这其中不涉及numerical variables。所以numerical variables是在多模态融合完成后，再一起送入时序融合步骤。
+- numerical variable的拼接细节：
+     - 文本嵌入向量（text_embeddings）：尺寸：(batch_size, sequence_length, text_embedding_dim)。在代码中，text_embedding_dim 为 1024
+    - 视觉嵌入向量（vision_embeddings）：尺寸：(batch_size, sequence_length, vision_embedding_dim)。在代码中，vision_embedding_dim 为 1024
+    - 数值嵌入向量（numerical_embeddings）：尺寸：(batch_size, sequence_length, numerical_feature_dim)。在代码中，numerical_feature_dim 为 3
+    - mlp就是将numerical_feature_dim的3也映射为1024大小，方便对齐image和text。这样的好处是多模态和numerical特征权重均衡，充分表达了数量特征。
 
 
 # 2. 实验步骤：
