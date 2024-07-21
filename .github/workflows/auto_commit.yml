@@ -23,7 +23,7 @@ jobs:
       - name: Push changes
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
-        uses: ad-m/github-push-action@v0.6.2
+        uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.PAT }}
           branch: diandian_devlop
