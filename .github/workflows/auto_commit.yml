@@ -21,10 +21,14 @@ jobs:
           git config --global user.name "diandianyilin"
           git config --global user.email "yilindiandian@gmail.com"
           git add file.txt
-          git commit -m "Auto commit"
 
-      - name: Push changes
-        uses: github-actions-x/commit@v3
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          github_token: ${{ secrets.PAT }}
+          commit_message: "Auto commit"
           branch: diandian_devlop
+          commit_user_name: diandianyilin
+          commit_user_email: yilindiandian@gmail.com
+          git_commit_args: --no-verify
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
