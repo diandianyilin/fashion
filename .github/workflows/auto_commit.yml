@@ -1,6 +1,8 @@
 name: Auto Commit
 
 on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour
   push:
     branches:
       - diandian_devlop
@@ -8,6 +10,7 @@ on:
 jobs:
   auto-commit:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -15,7 +18,7 @@ jobs:
       - name: Make some changes
         run: |
           echo "Some changes" >> file.txt
-          git config --global user.name "DianDian"
+          git config --global user.name "diandianyilin"
           git config --global user.email "yilindiandian@gmail.com"
           git add file.txt
           git commit -m "Auto commit"
