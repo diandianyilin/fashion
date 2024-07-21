@@ -21,7 +21,8 @@ jobs:
           git commit -m "Auto commit"
 
       - name: Push changes
-        uses: github-actions/push@v1
+        uses: actions/github-script@v6
         with:
-          github_token: ${{ secrets.PAT }}
-          branch: diandian_devlop
+          script: |
+            const exec = require('@actions/exec');
+            await exec.exec('git push https://${{ secrets.PAT }}@github.com/${{ github.repository }} HEAD:diandian_devlop');
