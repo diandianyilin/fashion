@@ -21,7 +21,7 @@ jobs:
           git commit -m "Auto commit"
 
       - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
+        uses: github-actions/push@v1
         with:
           github_token: ${{ secrets.PAT }}
           branch: diandian_devlop
