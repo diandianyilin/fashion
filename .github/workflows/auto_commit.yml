@@ -30,4 +30,4 @@ jobs:
           commit_user_name: diandianyilin
           commit_user_email: yilindiandian@gmail.com
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
