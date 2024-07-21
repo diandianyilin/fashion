@@ -29,6 +29,5 @@ jobs:
           branch: diandian_devlop
           commit_user_name: diandianyilin
           commit_user_email: yilindiandian@gmail.com
-          git_commit_args: --no-verify
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
