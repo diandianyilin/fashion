@@ -8,3 +8,4 @@ model/after2monthdata_20%_with_trend.csv
 model/stastics_20%_with_trend.csv
 model/test_after2monthdata.csv
 model/train_after2monthdata.csv
+model/output_cluster_imagebind100
