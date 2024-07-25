@@ -1,14 +1,90 @@
 # Multimodal_MKT
 
-### added data_prep.ipynb
+## Done:
+#### added data_prep.ipynb
 1. select 200 posters from 50w level posters
 2. keep fashion-related posts only
 
-### updated data.ipynb
+#### updated data.ipynb
 1. visualize special cases of segmentation
 2. sentiment analysis on post_comment_content
 3. visualize sentiment results
 4. add poster's numerical metrics
 
-### updated label.ipynb
+#### updated label.ipynb
 visualize proportion and trend
+
+----------------------------------------------
+### Video -> Images
+1. Extract frames at 1/4, 2/4, and 3/4 of the video's duration
+2. Save the extracted frames as images
+
+![Screenshot 2024-07-25 at 13 23 04](https://github.com/user-attachments/assets/78f3144e-1710-4018-a3fc-05a33d8ee2bc)
+
+### Image Segmentation
+Original image + the mask -> processed image
+
+![Screenshot 2024-07-25 at 13 23 45](https://github.com/user-attachments/assets/95a27c7e-d74c-43cd-a7f3-25db395a1669)
+
+### Image Segmentation -- special cases
+1. mask area too small
+
+![image](https://github.com/user-attachments/assets/4d276964-1aa6-4be3-a7a7-2c5b9bf5620e)
+![image](https://github.com/user-attachments/assets/d54785c1-f8c7-4974-8e31-2e0e78d152ad)
+
+2. mask area too large
+
+![image](https://github.com/user-attachments/assets/491c96cb-1920-4490-986f-7537e70d8e76)
+
+### Image Clustering 
+Maybe better to perform image clustering specifically to segment the clothing, rather than focusing on the style or the entire human figure?
+K = 100
+
+![Screenshot 2024-07-25 at 13 27 21](https://github.com/user-attachments/assets/854b4f4b-50b3-4d89-b571-20d7aab92bfd)
+
+### Test Preprocessing
+1. Removing Stop Words 
+2. Tokenization
+3. Stemming and Lemmatization
+4. Handling Special Characters
+5. Translating Emojis
+6. replace('1千', '1000').replace('1万', '10000’) 
+7. Sentiment analysis on comments
+
+### Sentiment analysis resutls of first 10 comments
+
+![image](https://github.com/user-attachments/assets/7277c851-113f-4962-8cc7-d74afe3b3957)
+
+##### Positive: score > 0.6
+##### Negative: score < 0.4
+##### Neutral: else
+
+![image](https://github.com/user-attachments/assets/a6826ebc-3d91-4a0e-9a74-d7f50fc25f59)
+
+### Numerical metrics from posters
+'粉丝数': 'fans_count',
+'关注数': 'following_count',
+'赞藏总量': 'total_likes',
+'笔记数': 'posts_count'
+
+### Metrics of Popularity
+
+![Screenshot 2024-07-25 at 13 34 15](https://github.com/user-attachments/assets/5064e175-fc7a-4535-8920-fcc059bd65e1)
+
+![image](https://github.com/user-attachments/assets/5a9b7d20-9f82-4193-b664-8362d02ece2e)
+
+![Screenshot 2024-07-25 at 13 33 59](https://github.com/user-attachments/assets/c4935660-b13f-428b-be33-f883e79c151a)
+
+![image](https://github.com/user-attachments/assets/9c913935-c7ae-462b-ad9b-531db192148e)
+
+
+
+
+
+
+
+
+
+
+
+
