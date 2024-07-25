@@ -20,7 +20,7 @@
         - 解决方法：人工check？去掉这些聚类不明显的数据/或重新分配类别（找到其他优质类别的聚类中心代表性图片，然后再次相似度聚类，重新分配类别）
 
 <p align="center">
-    <img src="image/description.png" width="600"/>
+    <img src="image/description.png" width="800"/>
     <br>
     <strong>两种典型bad case</strong>
 </p>
@@ -31,13 +31,13 @@
 - 缺点是：有身体姿态/布局的干扰。换句话说，来自同一个的post的几个不同的image，因为身体姿态类似，即使衣服不同，也会更加容易错误的聚合在一起。
 
 <p align="center">
-    <img src="image/body_good.png" width="600"/>
+    <img src="image/body_good.png" width="800"/>
     <br>
     <strong>人体分割 可视化 good case</strong>
 </p>
 
 <p align="center">
-    <img src="image/body_bad.png" width="600"/>
+    <img src="image/body_bad.png" width="800"/>
     <br>
     <strong>人体分割 可视化 bad case</strong>
 </p>
@@ -46,17 +46,17 @@
 
 #### 1.1.3 衣服分割
 衣服segment
-- 优点是：纯衣服分类明显更准。可以识别颜色不同，但是“质感类型”一致的衣服。
+- 优点是：纯衣服分类明显更准。
 - 缺点是：segment之后会有更大概率只剩下一小部分有效面积，出现all black的概率更大。
 
 <p align="center">
-    <img src="image/cloth_good.png" width="600"/>
+    <img src="image/cloth_good.png" width="800"/>
     <br>
     <strong>衣服分割 可视化 good case</strong>
 </p>
 
 <p align="center">
-    <img src="image/cloth_bad.png" width="600"/>
+    <img src="image/cloth_bad.png" width="800"/>
     <br>
     <strong>衣服分割 可视化 bad case</strong>
 </p>
@@ -69,13 +69,16 @@
 
 ## 2 proportion
 
+<span style="color:red">注意：由于label标注规则，下面说明的 “某个月会火/占比的风格”，其实是指“2个月后的情况”，并不是真的指"当月"。比如7月出现"厚衣服"会占比高，实际是指9月厚衣服占比高</span>
+
+
 ### 2.1 人体segment的proportion
 
-- 2.1.1 可视化所有类别占比。基本均衡。在month=5的时候，有些占比特别小的
+- 2.1.1 可视化所有类别占比。基本均衡。
 <p align="center">
     <img src="image/trend_1_categories_body.png" width="600"/>
     <br>
-    <strong>proportion，每个月未来占比大于1%的类别 可视化</strong>
+    <strong>proportion，每个月占比大于1%的类别 可视化</strong>
 </p>
 
 
@@ -83,39 +86,40 @@
 <p align="center">
     <img src="image/all_categories_trend_1_with_lines_body.png" width="600"/>
     <br>
-    <strong>proportion，每个月的所有类别 未来占比 可视化</strong>
+    <strong>proportion，每个月的所有类别占比 可视化</strong>
 </p>
 
-- 2.1.3 可视化每个月大于1%的显著类别。并对于top3的类型标注序号。可以发现其中不少风格是长期持续存在的。
+- 2.1.3 可视化每个月大于1%的显著类别。并对于top3的类型标注序号。可以发现其中不少style是长期持续存在的(如前5个月的风格几乎"霸榜")。
 <p align="center">
     <img src="image/categories_proportion_above_0.01_trend_1_with_lines_and_labels_body.png" width="600"/>
     <br>
-    <strong>proportion，每个月未来占比大于1%的类别 可视化</strong>
+    <strong>proportion，每个月占比大于1%的类别 可视化</strong>
 </p>
 
-- 2.1.4 每个月具体会火的比例
+- 2.1.4 上述每个月的top3风格，具体
 
 | Month  |    1    |    2    |    3    |    4    |    5    |    6    |    7    |    8    |    9    |   10   |   11   |   12   |
 |:-----:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:------:|:------:|:------:|
 | Top 3 | 1, 17, 9| 9, 17, 6| 4, 17, 9| 4, 6, 17| 4, 6, 0 |19, 4, 9|11, 17, 4|17, 10, 11| 9, 17, 2|17, 9, 1| 9, 17, 1| 1, 18, 17|
 
 
-- 再次证明了，segment人体可能引入姿态布局干扰，下图中出现了很多后脑勺头发图。
+- 可视化上述每个月的top3风格，如下
 <p align="center">
-    <img src="image/proportion_body.png" width="600"/>
+    <img src="image/proportion_body.png" width="800"/>
     <br>
-    <strong>每个月会火的比例 可视化，每行代表这个月会火的三个风格，并自随机采样5个。比如第一行代表第一个月的1, 17, 9类别各5张</strong>
+    <strong>每个月会火的比例 可视化，每行代表这个月会火的三个风格，并自随机采样5个。比如第一行代表第一个月的1, 17, 9类别各5张(排列：5|5|5)</strong>
 </p>
 
+- 再次证明了，segment人体可能引入姿态布局干扰，下图中出现了很多后脑勺头发图。
 
 
 ### 2.2 衣服segment的proportion
 
-- 2.2.1 可视化所有类别占比。突出的类别为第一类，类型就是all black。证明了segment衣服容易造成all black的情况。
+- 2.2.1 可视化所有类别占比。突出的类别为第一类，类型就是all black。再次证明了segment衣服确实更容易造成all black的bad case。
 <p align="center">
     <img src="image/trend_1_categories_cloth.png" width="600"/>
     <br>
-    <strong>proportion，每个月未来占比大于1%的类别 可视化</strong>
+    <strong>proportion，每个月占比大于1%的类别 可视化</strong>
 </p>
 
 
@@ -123,31 +127,30 @@
 <p align="center">
     <img src="image/all_categories_trend_1_with_lines_cloth.png" width="600"/>
     <br>
-    <strong>proportion，每个月的所有类别 未来占比 可视化</strong>
+    <strong>proportion，每个月的所有类别 占比 可视化</strong>
 </p>
 
 - 2.2.3 去掉all balck的类型后。对于剩下的类型重新计算proportion占比，并对于top3的类型标注序号。注意到segment衣服难以出现长期具有统治力的风格，基本上每种风格火最多持续2个月就会消失。
 <p align="center">
     <img src="image/categories_proportion_above_0.01_trend_1_with_lines_and_labels_cloth2.png" width="600"/>
     <br>
-    <strong>proportion，每个月未来占比大于1%的类别 可视化</strong>
+    <strong>proportion，每个月占比大于1%的类别 可视化</strong>
 </p>
 
 
-- 2.2.4 具体每个月会火的比例
+- 2.2.4 上述每个月的top3风格，具体
 
 | Month |    1    |    2    |    3    |    4    |    5    |    6    |    7    |    8    |    9    |   10   |   11   |   12   |
 |:-----:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:------:|:------:|:------:|
 | Top 3 | 64, 68, 14 | 73, 31, 37 | 74, 51, 94 | 18, 44, 29 | 29, 74, 66 | 17, 38, 84 | 84, 76, 8 | 14, 17, 82 | 19, 14, 63 | 3, 45, 64 | 68, 71, 64 | 64, 68, 14 |
 
-
-- 效果较好。可以看出明显的风格。
+- 可视化上述每个月的top3风格，如下
 <p align="center">
-    <img src="image/proportion_cloth.png" width="600"/>
+    <img src="image/proportion_cloth.png" width="800"/>
     <br>
-    <strong>每个月会火的比例 可视化，每行代表这个月会火的三个风格，并自随机采样5个。比如第一行代表第一个月的64, 68, 14类别各5张</strong>
+    <strong>每个月会火的比例 可视化，每行代表这个月会火的三个风格，并自随机采样5个。比如第一行代表第一个月的64, 68, 14类别各5张(排列：5|5|5)</strong>
 </p>
-
+- 效果较好。可以看出明显的风格。
 
 
 ## 3. output可视化
