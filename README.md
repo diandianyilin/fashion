@@ -1,19 +1,22 @@
 # Multimodal_MKT
 
 ## Done:
-#### added data_prep.ipynb
+####  - added data_prep.ipynb
 1. select 200 posters from 50w level posters
 2. keep fashion-related posts only
 
-#### updated data.ipynb
+#### - updated data.ipynb
 1. visualize special cases of segmentation
 2. sentiment analysis on post_comment_content
 3. visualize sentiment results
 4. add poster's numerical metrics
 
-#### updated label.ipynb
-visualize proportion and trend
+#### - updated label.ipynb
+- visualize proportion and trend
 
+#### - run classification.ipynb and regression.ipynb
+- use sample of 300 posters
+  
 ----------------------------------------------
 ### Video -> Images
 1. Extract frames at 1/4, 2/4, and 3/4 of the video's duration
@@ -79,7 +82,10 @@ Original image + the mask -> processed image
 <img src="https://github.com/user-attachments/assets/d49948a4-16c8-4601-9468-31bd0687514d" width="450" height="300" />
 
 
+### classification results
 
+
+### regression results
 
 
 
