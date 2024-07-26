@@ -54,13 +54,13 @@ Original image + the mask -> processed image
 
 ### Sentiment analysis resutls of first 10 comments
 
-<img src="https://github.com/user-attachments/assets/2f2045f4-e15e-45bc-8747-edf9e29ff3fb" width="600" height="400" />
+<img src="https://github.com/user-attachments/assets/2f2045f4-e15e-45bc-8747-edf9e29ff3fb" width="450" height="300" />
 
 ##### Positive: score > 0.6
 ##### Negative: score < 0.4
 ##### Neutral: else
 
-<img src="https://github.com/user-attachments/assets/0e12abbd-9e3a-446c-934a-57b2dfb4ff43" width="400" height="400" />
+<img src="https://github.com/user-attachments/assets/0e12abbd-9e3a-446c-934a-57b2dfb4ff43" width="300" height="300" />
 
 ### Numerical metrics from posters
 '粉丝数': 'fans_count',
@@ -72,11 +72,11 @@ Original image + the mask -> processed image
 
 ![Screenshot 2024-07-25 at 13 34 15](https://github.com/user-attachments/assets/5064e175-fc7a-4535-8920-fcc059bd65e1)
 
-<img src="https://github.com/user-attachments/assets/cbddfa1a-ef96-4866-b29b-29bfa1d7ac97" width="600" height="400" />
+<img src="https://github.com/user-attachments/assets/cbddfa1a-ef96-4866-b29b-29bfa1d7ac97" width="450" height="300" />
 
 ![Screenshot 2024-07-25 at 13 33 59](https://github.com/user-attachments/assets/c4935660-b13f-428b-be33-f883e79c151a)
 
-<img src="https://github.com/user-attachments/assets/d49948a4-16c8-4601-9468-31bd0687514d" width="600" height="400" />
+<img src="https://github.com/user-attachments/assets/d49948a4-16c8-4601-9468-31bd0687514d" width="450" height="300" />
 
 
 
