@@ -37,8 +37,9 @@ Original image + the mask -> processed image
 ![image](https://github.com/user-attachments/assets/491c96cb-1920-4490-986f-7537e70d8e76)
 
 ### Image Clustering 
-Maybe better to perform image clustering specifically to segment the clothing, rather than focusing on the style or the entire human figure?
-K = 100
+- K = 100
+- Maybe better to perform image clustering specifically to segment the clothing, rather than focusing on the style or the entire human figure?
+- cluster based on pose or style
 
 ![Screenshot 2024-07-25 at 13 27 21](https://github.com/user-attachments/assets/854b4f4b-50b3-4d89-b571-20d7aab92bfd)
 
@@ -53,13 +54,13 @@ K = 100
 
 ### Sentiment analysis resutls of first 10 comments
 
-![image](https://github.com/user-attachments/assets/7277c851-113f-4962-8cc7-d74afe3b3957)
+![image](https://github.com/user-attachments/assets/2f2045f4-e15e-45bc-8747-edf9e29ff3fb)
 
 ##### Positive: score > 0.6
 ##### Negative: score < 0.4
 ##### Neutral: else
 
-![image](https://github.com/user-attachments/assets/a6826ebc-3d91-4a0e-9a74-d7f50fc25f59)
+![image](https://github.com/user-attachments/assets/0e12abbd-9e3a-446c-934a-57b2dfb4ff43)
 
 ### Numerical metrics from posters
 '粉丝数': 'fans_count',
@@ -71,12 +72,11 @@ K = 100
 
 ![Screenshot 2024-07-25 at 13 34 15](https://github.com/user-attachments/assets/5064e175-fc7a-4535-8920-fcc059bd65e1)
 
-![image](https://github.com/user-attachments/assets/5a9b7d20-9f82-4193-b664-8362d02ece2e)
+![image](https://github.com/user-attachments/assets/cbddfa1a-ef96-4866-b29b-29bfa1d7ac97)
 
 ![Screenshot 2024-07-25 at 13 33 59](https://github.com/user-attachments/assets/c4935660-b13f-428b-be33-f883e79c151a)
 
-![image](https://github.com/user-attachments/assets/9c913935-c7ae-462b-ad9b-531db192148e)
-
+![image](https://github.com/user-attachments/assets/d49948a4-16c8-4601-9468-31bd0687514d)
 
 
 
