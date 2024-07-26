@@ -83,10 +83,10 @@ Original image + the mask -> processed image
 
 
 ### classification results
-
+Test Accuracy: 60.00%
 
 ### regression results
-
+Evaluation Loss: 0.00013176486892131254
 
 
 
