@@ -16,7 +16,14 @@
 
 #### - run classification.ipynb and regression.ipynb
 - use sample of 300 posters
-  
+
+## Discussion:
+1. model architecture: test embedding, vision embedding, numerical embedding --> add audio embedding?
+2. heatmap
+3. sales data?
+4. Bass model
+5. Survey? (BrandImageNet mode, LiuLiu 2020)
+   
 ----------------------------------------------
 ### Video -> Images
 1. Extract frames at 1/4, 2/4, and 3/4 of the video's duration
