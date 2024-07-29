@@ -32,12 +32,17 @@ Original image + the mask -> processed image
 ### Image Segmentation -- special cases
 1. mask area too small
 
-![image](https://github.com/user-attachments/assets/4d276964-1aa6-4be3-a7a7-2c5b9bf5620e)
-![image](https://github.com/user-attachments/assets/d54785c1-f8c7-4974-8e31-2e0e78d152ad)
+<img src="https://github.com/user-attachments/assets/4d276964-1aa6-4be3-a7a7-2c5b9bf5620e" width="450" height="300" />
+<img src="https://github.com/user-attachments/assets/d54785c1-f8c7-4974-8e31-2e0e78d152ad" width="450" height="300" />
+<img src="https://github.com/user-attachments/assets/a845abda-f0aa-421a-8c86-f127fd8fa929" width="450" height="300" />
+<img src="https://github.com/user-attachments/assets/634bcf5b-39d2-44a7-b5da-77d8153c6565" width="450" height="300" />
 
 2. mask area too large
 
-![image](https://github.com/user-attachments/assets/491c96cb-1920-4490-986f-7537e70d8e76)
+<img src="https://github.com/user-attachments/assets/491c96cb-1920-4490-986f-7537e70d8e76" width="450" height="300" />
+<img src="https://github.com/user-attachments/assets/81a9671a-9bdf-4810-9948-7f9fe6a58784" width="450" height="300" />
+<img src="https://github.com/user-attachments/assets/a818f392-8e06-4fa4-bd65-4dc1e97630e0" width="450" height="300" />
+<img src="https://github.com/user-attachments/assets/abb80344-8286-4206-bb7f-4ef3995ade3f" width="450" height="300" />
 
 ### Image Clustering 
 - K = 100
