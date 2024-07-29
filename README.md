@@ -58,7 +58,7 @@ Original image + the mask -> processed image
 
 ![Screenshot 2024-07-25 at 13 27 21](https://github.com/user-attachments/assets/854b4f4b-50b3-4d89-b571-20d7aab92bfd)
 
-### Test Preprocessing
+### Text Preprocessing
 1. Removing Stop Words 
 2. Tokenization
 3. Stemming and Lemmatization
