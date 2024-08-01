@@ -119,7 +119,7 @@
 
 
 建议解决方法：
-1. 首先使用人体segment聚类，根据silhouette得到更多类别。
+1. 首先使用人体segment聚类，根据silhouette平均轮廓法 得到更多聚类数量。
 	- 虽然由于用户的姿态容易一致，来自同一个poster的几张图片，更容易被分为同一类。但是这应该是可以接受的，因为本来就是享受同一个poster style tag
 2. 然后去掉每个类中，头/身体占比过大的，衣服占比太少的图片。
 	- 方法是 使用衣服segment，计算每个图片的black area，去掉black area过大的，比如Fig.9 bad case中的头脸过大的图片）。
