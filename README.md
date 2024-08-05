@@ -1,6 +1,14 @@
 # Multimodal_MKT
 
-## Done:
+## Aug 5, 2024
+### cloth-segment issues
+- need to remove non cloth-focused images (e.g., posts of makeup/accessory/shoes)
+
+### clustering -- test average silhouette score
+![image](https://github.com/user-attachments/assets/caa34e4a-d857-438e-907d-3bf02f3cfddf)
+
+
+## July 30, 2024:
 ####  - added data_prep.ipynb
 1. select 200 posters from 50w level posters
 2. keep fashion-related posts only
@@ -99,10 +107,4 @@ Test Accuracy: 60.00%
 
 ### regression results
 Evaluation Loss: 0.00013176486892131254
-
-
-
-
-
-
 
