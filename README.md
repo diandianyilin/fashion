@@ -4,7 +4,7 @@
 ### cloth-segment issues
 - need to remove non cloth-focused images (e.g., posts of makeup/accessory/shoes)
 
-### clustering -- test average silhouette score
+### clustering -- find out the optimal number of cluster by silhouette method
 ![image](https://github.com/user-attachments/assets/caa34e4a-d857-438e-907d-3bf02f3cfddf)
 ![image](https://github.com/user-attachments/assets/0fd23eb4-f2fa-4b3d-8511-843c56038c94)
 
