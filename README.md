@@ -1,6 +1,6 @@
-# Multimodal_MKT
+# Text-image Match 
 
-## text clustering
+## Use dictionary
 ### Dictionary 1 - General
 ##### Input: topics0611.csv, poster_test_fashion_nlpclean.csv
 ##### Output: word_suffixes.csv, keyword_freq_dict1.csv, keyword_freq_by_month_dict1.csv
@@ -9,6 +9,7 @@
 2. Use those suffixes to search for complete words in the poster_test_fashion_nlpclean.csv file.
 3. Do textual data cleaning again.
 4. Count overall frequency and by-month frequency.
+5. Match images and visualize the popularity by images.
  
 ### Dictionary 2 - Specific 
 ##### Inputs: topics0611.csv, poster_test_fashion_nlpclean.csv
@@ -16,9 +17,19 @@
 ##### Steps:
 1. Use topics0611.csv to do exact match with poster_test_fashion_nlpclean.csv.
 2. Count overall frequency and by-month frequency.
+3. Match images and visualize the popularity by images.
 
 
-
+## No dictionary
+##### Inputs: poster_test_fashion_nlpclean.csv
+##### Outputs: poster_test_fashion_clustered.csv
+##### Steps:
+1. Double cleaning on textual data
+2. RAKE keyword extraction
+3. Use text2vec-large-chinese to generate embedding
+4. Use Silhouette Method to find the optimal number of clusters
+5. Do KMeans clustering
+6. Visualize results
 
 
 
