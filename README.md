@@ -1,5 +1,27 @@
 # Multimodal_MKT
 
+## text clustering
+### Dictionary 1 - General
+##### Input: topics0611.csv, poster_test_fashion_nlpclean.csv
+##### Output: word_suffixes.csv, keyword_freq_dict1.csv, keyword_freq_by_month_dict1.csv
+##### Steps: 
+1. Extract common suffixes from the topics0611.csv file.
+2. Use those suffixes to search for complete words in the poster_test_fashion_nlpclean.csv file.
+3. Do textual data cleaning again.
+4. Count overall frequency and by-month frequency.
+ 
+### Dictionary 2 - Specific 
+##### Inputs: topics0611.csv, poster_test_fashion_nlpclean.csv
+##### Outputs: keyword_freq_dict2.csv, keyword_freq_by_month_dict2.csv
+##### Steps:
+1. Use topics0611.csv to do exact match with poster_test_fashion_nlpclean.csv.
+2. Count overall frequency and by-month frequency.
+
+
+
+
+
+
 ## Aug 5, 2024
 ### cloth-segment issues
 - need to remove non cloth-focused images (e.g., posts of makeup/accessory/shoes)
