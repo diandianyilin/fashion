@@ -3,7 +3,7 @@
 ## Use dictionary
 ### Dictionary 1 - General
 ##### Input: [topics0611.csv](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_devlop/topics0611.csv), [poster_test_fashion_nlpclean.csv]()
-##### Output: word_suffixes.csv, keyword_freq_dict1.csv, keyword_freq_by_month_dict1.csv
+##### Output: [word_suffixes.csv](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_devlop/word_suffixes.csv), keyword_freq_dict1.csv, keyword_freq_by_month_dict1.csv
 ##### Steps: 
 1. Extract common suffixes from the topics0611.csv file.
 2. Use those suffixes to search for complete words in the poster_test_fashion_nlpclean.csv file.
@@ -88,7 +88,7 @@
 </div>
 
 ### Dictionary 2 - Specific 
-##### Inputs: topics0611.csv, poster_test_fashion_nlpclean.csv
+##### Inputs: [topics0611.csv](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_devlop/topics0611.csv), [poster_test_fashion_nlpclean.csv]()
 ##### Outputs: keyword_freq_dict2.csv, keyword_freq_by_month_dict2.csv
 ##### Steps:
 1. Use topics0611.csv to do exact match with poster_test_fashion_nlpclean.csv.
