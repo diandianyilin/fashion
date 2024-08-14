@@ -18,12 +18,6 @@
 </div>
 
 #### Image visualization
-![image](https://github.com/user-attachments/assets/)
-![image](https://github.com/user-attachments/assets/)
-![image](https://github.com/user-attachments/assets/)
-![image](https://github.com/user-attachments/assets/)
-![image](https://github.com/user-attachments/assets/)
-![image](https://github.com/user-attachments/assets/)
 
 - Overall Frequency Visualization
 <div style="display: flex; justify-content: space-around;">
@@ -36,114 +30,62 @@
 </div>
 
 - By-Month Frequency Visualization
+
+</div>
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/user-attachments/assets/dcbbe8a9-416e-456c-a9c4-4c3b4c221c9f" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/93da4ca5-a3e0-4b3f-8302-49bde22c4e35" alt="Image 2" width="45%"/>
+</div>
+
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/user-attachments/assets/021d88bd-edc3-43a2-baff-559db2a71cc7" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/34bff7d0-2413-4e6e-8d68-a0f404180ac3" alt="Image 2" width="45%"/>
+</div>
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/user-attachments/assets/e93fb66e-a033-45c0-8ecc-3cd3364db5b1" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/4065706b-ce34-46c9-9f03-231ce1b0e9e2" alt="Image 2" width="45%"/>
+</div>
+
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/user-attachments/assets/c43c038c-184b-4d02-b694-8694213a35ca" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/00f49691-201a-4aae-b44d-451bcd720596" alt="Image 2" width="45%"/>
+</div>
+
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/user-attachments/assets/d434472e-cd24-446a-8735-b3be249e348c" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/9b32dbc2-762d-4850-8c58-6c9aa7a13a0e" alt="Image 2" width="45%"/>
+</div>
+
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/user-attachments/assets/8099ef99-041b-49d9-a2ee-af2066decd64" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/c6b0ac01-e113-42b5-88d3-c1550941d52b" alt="Image 2" width="45%"/>
+</div>
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/user-attachments/assets/0130a4b9-3f89-4a8c-b942-4e682154907f" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/06fe12c3-edc5-4be0-bdf4-8bde79a8d4e8" alt="Image 2" width="45%"/>
+</div>
+
 <div style="display: flex; justify-content: space-around;">
   <img src="https://github.com/user-attachments/assets/4e31eaf3-94d4-40bf-9688-91fded50e291" alt="Image 1" width="45%"/>
   <img src="https://github.com/user-attachments/assets/891c8aaf-4590-446a-8a2a-2fedc592220c" alt="Image 2" width="45%"/>
 </div>
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/1ad86d89-b23f-4d17-adcd-19fecaa52a4e" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/461e87c1-7724-4f77-9166-f7d5f405866c" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/a0f57811-3dc4-42fd-a90b-4452a3df7513" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/b5545b85-abb1-4292-896b-8706853f10c9" alt="Image 2" width="45%"/>
+</div>
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/user-attachments/assets/40235c82-356b-4d96-912e-48e071ca3d26" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/9c274feb-8b17-400d-a0b6-86072e0229c8" alt="Image 2" width="45%"/>
 </div>
 
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/7b1184a6-413d-4a4c-b25c-0c35f0bf4374" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/f9ad1c08-497d-43a5-9b90-bb1cf55a7292" alt="Image 2" width="45%"/>
 </div>
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/3a50b8c5-2f6f-45d9-b620-3a0846b850b4" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/2066ef33-d687-4a91-ae97-ee5e680e37f1" alt="Image 2" width="45%"/>
 </div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/14ac29e2-dbe5-4c53-953e-50a6bd1051a2" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/284c782c-b9fc-4c50-921a-28322007ed63" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
 
 ### Dictionary 2 - Specific 
 ##### Inputs: topics0611.csv, poster_test_fashion_nlpclean.csv
@@ -155,129 +97,76 @@
 
 #### Text visualization
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/dc946c0d-09f3-45f3-91db-e238a193b6df" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/81483025-0f69-4d64-b23a-a211ff5f8969" alt="Image 2" width="45%"/>
 </div>
 
 #### Image visualization
 
 - Overall Frequency Visualization
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/3ee70019-a4d0-485b-9440-bdba111994da" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/7da914b6-4bd3-451d-b1c3-ef1ce46adaf8" alt="Image 2" width="45%"/>
 </div>
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/ace39e68-f010-45e6-98b0-f56a9ee8e20e" alt="Image 1" width="33%"/>
+  <img src="https://github.com/user-attachments/assets/7a989d3f-be9b-4c4c-837e-4f0068c1dcd3" alt="Image 2" width="33%"/>
+  <img src="https://github.com/user-attachments/assets/8e419642-fb95-456b-a84c-eba465021593" alt="Image 2" width="33%"/>
 </div>
 
 - By-Month Frequency Visualization
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/8ba4c1c6-e9e8-4d22-a9f6-4dd28aac06b3" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/d969cbb0-de30-40e5-b089-583b24b3a631" alt="Image 2" width="45%"/>
 </div>
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/38cbc41f-d621-480e-a0b2-de76d8d9785b" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/c111c75e-95d4-43e9-9a8b-5b9ddc297e3d" alt="Image 2" width="45%"/>
 </div>
 
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/e8523f35-811b-4348-b19e-50eb35a24b6a" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/20ddb204-221b-47c6-b445-20e07971dfc7" alt="Image 2" width="45%"/>
 </div>
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/d9f0282e-6b59-44db-8e7b-16ad5d0a5599" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/f5b5b9d5-981d-4ef7-b85c-09797b7d38ab" alt="Image 2" width="45%"/>
 </div>
 
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/8d624106-c8c3-4ebc-b433-919712738b73" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/16d3d0c1-96ac-43b2-a313-4352d12ce3c9" alt="Image 2" width="45%"/>
 </div>
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/790b5e8b-3bed-4ec8-b06a-e518372fb2a2" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/aa2597a8-f574-440e-9e13-87d2cfcea65b" alt="Image 2" width="45%"/>
 </div>
 
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/ef276976-1195-4aa3-be48-6d6a6d653704" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/13365890-3aef-4923-86db-4078ac849aa2" alt="Image 2" width="45%"/>
 </div>
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/373fe8b8-f0ef-47f0-a6e4-da1a91905b5b" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/339e08d3-f3aa-483d-ba6e-e474be3108cc" alt="Image 2" width="45%"/>
 </div>
 
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/a0b1f529-da87-4d8d-b984-38cd61534573" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/90552ff2-909b-41f7-b9db-db1211490e84" alt="Image 2" width="45%"/>
 </div>
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/505b4d4a-bd23-4a56-96ca-f7dca1da1c50" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/6f061100-4e6c-4505-b62e-e53f00511bc3" alt="Image 2" width="45%"/>
 </div>
 
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/c05b6389-35da-4b8e-ae52-affc69f88534" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/f178d7ed-3e26-4434-88c2-6d8aaf61a235" alt="Image 2" width="45%"/>
 </div>
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
-</div>
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/de2e855d-da16-4842-9196-c02dbf0b6646" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/8e6c0d2a-4166-43c4-a8a9-a9fb3a632d44" alt="Image 2" width="45%"/>
 </div>
 
 ## No dictionary
@@ -292,11 +181,13 @@
 6. Visualize results
 
 - The best number of clusters based on silhouette score is: 51
-![image](https://github.com/user-attachments/assets/e8bf159a-b64c-4d5a-981a-d485ccbaeea9)
-
 - Visualize the popularity of each cluster
-![image](https://github.com/user-attachments/assets/a43e48d8-ccd4-445d-b304-d77b915ac32a)
-![image](https://github.com/user-attachments/assets/c5feac5c-5125-4c6a-8683-f42ae019c246)
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/user-attachments/assets/e8bf159a-b64c-4d5a-981a-d485ccbaeea9" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/1e82a623-247f-4fb5-9a58-e89fb0f988c1" alt="Image 2" width="45%"/>
+</div>
+
+![image](https://github.com/user-attachments/assets/e94f66b3-4c45-4a03-973f-f4f2908d1d31)
 
 - Visualize the images for top 10 most popular clusters
 
