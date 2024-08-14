@@ -1,6 +1,7 @@
 # Text-image Match 
 
 ## Use dictionary
+see [nlp_dict.ipynb](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_devlop/nlp_dict.ipynb)
 ### Dictionary 1 - General
 ##### Input: [topics0611.csv](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_devlop/topics0611.csv), [poster_test_fashion_nlpclean.csv]()
 ##### Output: [word_suffixes.csv](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_devlop/word_suffixes.csv), keyword_freq_dict1.csv, keyword_freq_by_month_dict1.csv
@@ -170,6 +171,7 @@
 </div>
 
 ## No dictionary
+see [nlp_nodict.ipynb](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_devlop/nlp_nodict.ipynb)
 ##### Inputs: poster_test_fashion_nlpclean.csv
 ##### Outputs: poster_test_fashion_clustered.csv
 ##### Steps:
