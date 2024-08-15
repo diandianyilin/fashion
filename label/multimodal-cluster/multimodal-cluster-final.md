@@ -3,10 +3,25 @@
 
 # multimodal cluster
 
-结论：
-1. image分类：各类的数目分布基本均匀，但是sihoulette数目不正常
-2. text分类：sihoulette数目正常，但是出现极端分布
-3. multimodal分类：sihoulette数目正常，但是出现极端分布
+## 结论：
+
+1. image分类：各类的数目分布基本均匀，但是sihoulette数目不正常。
+2. text分类：sihoulette数目正常，但是出现极端分布。
+3. 多模态分类：sihoulette数目正常，但是出现极端分布。
+
+- 全部失败。核心原因可能是text不可靠（text越长，聚类效果越差，因此纯text或多模态均失败了）
+
+## 新发现：
+
+- 怀疑image的embedding维度过高，导致sihoulette失败。
+- 使用umap方法对于image的embedding进行降维后，发现效果显著，如下：
+1. 聚类数目sihoulette曲线，合理
+2. 分布均匀程度/各个月占比，合理
+3. 每个月具体的风格合理性，合理
+
+- 也许umap降维，可以作为一个有潜力的方向继续探索?
+
+
 
 
 # 1. 整体步骤
@@ -325,7 +340,7 @@ text选取完整content和纯tag，两种情况进行测试
 <p align="center">
     <img src="umap-all2.png" width="600"/>
     <br>
-    <strong>Fig.13, 多模态 使用umap降维算法，sihoulette曲线，是下降的 </strong>
+    <strong>Fig.14, 多模态 使用umap降维算法，sihoulette曲线，是下降的 </strong>
 </p>
 
 
@@ -341,21 +356,21 @@ text选取完整content和纯tag，两种情况进行测试
 <p align="center">
     <img src="umap-image.png" width="600"/>
     <br>
-    <strong>Fig.14, image 进行umap降维后 分布 </strong>
+    <strong>Fig.15, image 进行umap降维后 分布 </strong>
 </p>
 
 
 <p align="center">
     <img src="umap-image2.png" width="600"/>
     <br>
-    <strong>Fig.14, image 进行umap降维后 的sihoulette曲线，符合要求 </strong>
+    <strong>Fig.16, image 进行umap降维后 的sihoulette曲线，符合要求 </strong>
 </p>
 
 
 <p align="center">
     <img src="monthly_category_proportions-image2.png" width="600"/>
     <br>
-    <strong>Fig.14, image 进行umap降维后 散点图，分布均匀，符合要求 </strong>
+    <strong>Fig.17, image 进行umap降维后 散点图，分布均匀，符合要求 </strong>
 </p>
 
 
@@ -363,7 +378,7 @@ text选取完整content和纯tag，两种情况进行测试
 <p align="center">
     <img src="umap-series.png" width="600"/>
     <br>
-    <strong>Fig.14, image 进行umap降维后 每个月持续时间图 </strong>
+    <strong>Fig.18, image 进行umap降维后 每个月持续时间图 </strong>
 </p>
 
 
