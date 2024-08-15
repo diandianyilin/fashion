@@ -3,6 +3,11 @@
 
 # multimodal cluster
 
+结论：
+1. image分类：各类的数目分布基本均匀，但是sihoulette数目不正常
+2. text分类：sihoulette数目正常，但是出现极端分布
+3. multimodal分类：sihoulette数目正常，但是出现极端分布
+
 
 # 1. 整体步骤
 
@@ -50,6 +55,15 @@
 
 - 结论：失败。sihoulette曲线不正常，没有出现合适的聚类数量.（和上次组会汇报一致）
 
+<p align="center">
+    <img src="image-bg.png" width="600"/>
+    <br>
+    <strong>Fig.3, image（raw data，不使用任何segment）的sihoulette曲线，仍然是下降的 </strong>
+</p>
+
+
+
+
 ## 2.2 text处理
 
 
@@ -89,7 +103,7 @@ text选取完整content和纯tag，两种情况进行测试
 <p align="center">
     <img src="monthly_category_proportions2.png" width="600"/>
     <br>
-    <strong>Fig.6, 使用text(content)的每个月的分布，聚类数目取200，出现极端分布</strong>
+    <strong>Fig.6, 使用text(content)的每个月的分布，聚类数目取200。出现极端分布，占比高的为长文本</strong>
 </p>
 
 
@@ -117,7 +131,7 @@ text选取完整content和纯tag，两种情况进行测试
 <p align="center">
     <img src="monthly_category_proportions.png" width="600"/>
     <br>
-    <strong>Fig.9, 使用text(tag)的每个月的分布，聚类数目取200，出现极端分布</strong>
+    <strong>Fig.9, 使用text(tag)的每个月的分布，聚类数目取200。出现极端分布，占比高的为长文本</strong>
 </p>
 
 - 结论：失败。每个月占比太过于极端。
@@ -263,6 +277,10 @@ text选取完整content和纯tag，两种情况进行测试
 
 ```
 - 结论：依靠text分类靠不住，每一类没有明显规律。
+- 特点：
+    1. 文本越长，分类越差
+    2. 去掉nan的异常数据
+    3. 倾向于将有大量重复文本出现的划分为一类
 
 ## 2.3 多模态
 
@@ -291,15 +309,62 @@ text选取完整content和纯tag，两种情况进行测试
 
 
 
+# 5 其他发现
+
+
+- 使用降维算法：怀疑是embedding维度太高了
+
+## 5.1 多模态降维
+
+<p align="center">
+    <img src="umap-all.png" width="600"/>
+    <br>
+    <strong>Fig.13, 多模态 使用umap降维算法，分布情况 </strong>
+</p>
+ 
+<p align="center">
+    <img src="umap-all2.png" width="600"/>
+    <br>
+    <strong>Fig.13, 多模态 使用umap降维算法，sihoulette曲线，是下降的 </strong>
+</p>
+
+
+- 结论，失败，不符合要求
+
+## 5.2 image降维
+
+- 结论，成功。
+    1. 聚类数目sihoulette曲线，ok
+    2. 分布均匀程度/各个月占比，ok
+    3. 每个月具体的风格合理性，ok
+
+<p align="center">
+    <img src="umap-image.png" width="600"/>
+    <br>
+    <strong>Fig.14, image 进行umap降维后 分布 </strong>
+</p>
+
+
+<p align="center">
+    <img src="umap-image2.png" width="600"/>
+    <br>
+    <strong>Fig.14, image 进行umap降维后 的sihoulette曲线，符合要求 </strong>
+</p>
+
+
+<p align="center">
+    <img src="monthly_category_proportions-image2.png" width="600"/>
+    <br>
+    <strong>Fig.14, image 进行umap降维后 散点图，分布均匀，符合要求 </strong>
+</p>
 
 
 
-
-
-
-
-
-
+<p align="center">
+    <img src="umap-series.png" width="600"/>
+    <br>
+    <strong>Fig.14, image 进行umap降维后 每个月持续时间图 </strong>
+</p>
 
 
 
