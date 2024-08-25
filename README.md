@@ -214,9 +214,30 @@ see [nlp_nodict.ipynb](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_
   <img src="https://github.com/user-attachments/assets/03f9157d-0648-4997-90c1-6096cc6916db" alt="Image 2" width="45%"/>
 </div>
 
+## No dictionary + Dimensionality reduction
+##### Steps:
+1. Text Preprocessing
+   - Clean and prepare the text data
+   - RAKE Keyword Extraction
+2. Incorporate S-Bert and UMAP
+   - Generate embedding useing SBERT - text2vec-large-chinese
+   - Reduce dimensionality using UMAP
+   - Find the optimal #clusters using Silhouette Method for
+   - Do KMeans clustering
+7. Visualize results
 
+##### Findings
+- NICE Silhouette score (A reasonable structure is found) - Hooray!
+- The best number of clusters based on silhouette score is: 84
+- Cluster content in text is 
+- Cluster content in image is
+- 
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/user-attachments/assets/e8bf159a-b64c-4d5a-981a-d485ccbaeea9" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/1e82a623-247f-4fb5-9a58-e89fb0f988c1" alt="Image 2" width="45%"/>
+</div>
 
-  
+----------------------------------------------------------------------------------------------------------------------------
 ## Aug 5, 2024
 ### cloth-segment issues
 - need to remove non cloth-focused images (e.g., posts of makeup/accessory/shoes)
