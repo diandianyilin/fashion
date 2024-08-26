@@ -225,7 +225,7 @@ see [nlp_nodict.ipynb](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_
 7. Visualize results
 
 ##### Findings
-- NICE Silhouette score (A reasonable structure is found)
+- Nice Silhouette score (A reasonable structure is found)
 - The best number of clusters based on silhouette score is: 84
 
 <div style="display: flex; justify-content: space-around;">
