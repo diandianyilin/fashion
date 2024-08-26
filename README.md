@@ -186,11 +186,8 @@ see [nlp_nodict.ipynb](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_
 - Visualize the popularity of each cluster
 <div style="display: flex; justify-content: space-around;">
   <img src="https://github.com/user-attachments/assets/e8bf159a-b64c-4d5a-981a-d485ccbaeea9" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/3261c909-e848-4eed-b3a7-e6aac5578280" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/e94f66b3-4c45-4a03-973f-f4f2908d1d31" alt="Image 2" width="45%"/>
 </div>
-![image](https://github.com/user-attachments/assets/)
-
-![image](https://github.com/user-attachments/assets/e94f66b3-4c45-4a03-973f-f4f2908d1d31)
 
 - Visualize the images for top 10 most popular clusters
 
@@ -228,17 +225,14 @@ see [nlp_nodict.ipynb](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_
 7. Visualize results
 
 ##### Findings
-- NICE Silhouette score (A reasonable structure is found) - Hooray!
+- NICE Silhouette score (A reasonable structure is found)
 - The best number of clusters based on silhouette score is: 84
-- Cluster content in text is 
-- Cluster content in image is
-- 
+
 <div style="display: flex; justify-content: space-around;">
   <img src="https://github.com/user-attachments/assets/0c2038c8-ef40-48bf-9fed-e38f59b8dcc7" alt="Image 1" width="45%"/>
   <img src="https://github.com/user-attachments/assets/7dec6291-6aa5-4e18-b231-05aeba0ec84b" alt="Image 2" width="45%"/>
 </div>
-![image](https://github.com/user-attachments/assets/)
-![image](https://github.com/user-attachments/assets/)
+
 
 ----------------------------------------------------------------------------------------------------------------------------
 ## Aug 5, 2024
