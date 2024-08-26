@@ -1,4 +1,4 @@
-# Text-image Match 
+# Clustering based on text
 
 ## Use dictionary
 see [nlp_dict.ipynb](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_devlop/nlp_dict.ipynb)
@@ -186,8 +186,9 @@ see [nlp_nodict.ipynb](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_
 - Visualize the popularity of each cluster
 <div style="display: flex; justify-content: space-around;">
   <img src="https://github.com/user-attachments/assets/e8bf159a-b64c-4d5a-981a-d485ccbaeea9" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/1e82a623-247f-4fb5-9a58-e89fb0f988c1" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/3261c909-e848-4eed-b3a7-e6aac5578280" alt="Image 2" width="45%"/>
 </div>
+![image](https://github.com/user-attachments/assets/)
 
 ![image](https://github.com/user-attachments/assets/e94f66b3-4c45-4a03-973f-f4f2908d1d31)
 
@@ -233,9 +234,11 @@ see [nlp_nodict.ipynb](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_
 - Cluster content in image is
 - 
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/e8bf159a-b64c-4d5a-981a-d485ccbaeea9" alt="Image 1" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/1e82a623-247f-4fb5-9a58-e89fb0f988c1" alt="Image 2" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/0c2038c8-ef40-48bf-9fed-e38f59b8dcc7" alt="Image 1" width="45%"/>
+  <img src="https://github.com/user-attachments/assets/7dec6291-6aa5-4e18-b231-05aeba0ec84b" alt="Image 2" width="45%"/>
 </div>
+![image](https://github.com/user-attachments/assets/)
+![image](https://github.com/user-attachments/assets/)
 
 ----------------------------------------------------------------------------------------------------------------------------
 ## Aug 5, 2024
