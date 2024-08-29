@@ -1,225 +1,280 @@
-import pandas as pd
-import torch
-from transformers import BertTokenizer, BertForSequenceClassification
-from transformers import Trainer, TrainingArguments
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
-from torch.utils.data import Dataset
-from sklearn.feature_extraction.text import CountVectorizer  
-
-topics_file = '/home/disk1/red_disk1/Multimodal_MKT/topics0611.csv'
-posts_file = '/home/disk1/red_disk1/Multimodal_MKT/test/poster_test_fashion_nlpclean.csv'
-
-topics_df = pd.read_csv(topics_file)
-posts_df = pd.read_csv(posts_file)
-
-import pandas as pd
-import re
-import emoji
-import jieba
-
-# Load stopwords from the provided file
-with open('/home/disk1/red_disk1/Multimodal_MKT/stopwords_cn.txt', 'r', encoding='utf-8') as f:
-    stopwords = set(f.read().splitlines())
-
-# Load the poster_test_fashion_nlpclean.csv file
-poster_df = pd.read_csv('/home/disk1/red_disk1/Multimodal_MKT/test/poster_test_fashion_nlpclean.csv')
-
-# Remove duplicate rows based on poster_id and post_id
-poster_df = poster_df.drop_duplicates(subset=['poster_id', 'post_id'])
-
-# Ensure that the post_title and post_content columns are filled
-poster_df['post_title'] = poster_df['post_title'].fillna('')
-poster_df['post_content'] = poster_df['post_comment_content'].fillna('')
-
-# Combine titles and content for searching
-poster_df['combined_text'] = poster_df['post_title'] + ' ' + poster_df['post_content']
-
-# Function for text cleaning
-def clean_text(text, stopwords):
-    # Convert emojis to text
-    text = emoji.demojize(text)
-    
-    # Remove specific patterns
-    text = re.sub(r'- 小红书,,', '', text)
-    text = re.sub(r',,\d{2}-\d{2},,', '', text)
-    text = re.sub(r'#', ' ', text)
-    
-    # Remove digits
-    text = re.sub(r'\d+', '', text)
-    
-    # Remove special characters
-    cleaned_text = ''.join(char for char in text if char.isalnum() or char.isspace())
-    
-    # Tokenize
-    words = jieba.cut(cleaned_text)
-    
-    # Remove stopwords
-    filtered_words = [word for word in words if word not in stopwords]
-    
-    return ' '.join(filtered_words)
-
-# Apply data cleaning to post_title, post_content, and post_comments
-poster_df['post_title_clean'] = poster_df['post_title'].apply(lambda x: clean_text(x, stopwords))
-poster_df['post_content_clean'] = poster_df['post_content'].apply(lambda x: clean_text(x, stopwords))
-poster_df['post_comments_clean'] = poster_df['post_comment_content'].fillna('').apply(lambda x: clean_text(str(x), stopwords))
-
-# Load the topics0611.csv file containing fashion-related keywords
-topics_df = pd.read_csv('/home/disk1/red_disk1/Multimodal_MKT/topics0611.csv')
-
-# Extract fashion-related keywords from the 'keyword group' column
-fashion_keywords = topics_df['keyword group'].str.lower().unique()
-fashion_df = pd.DataFrame(fashion_keywords, columns=['keyword'])
-fashion_df['label'] = 1  # Label as fashion-related
-
-# Check the content of 'post_comments_clean' before vectorization
-comments_text = poster_df['post_comments_clean'].fillna('').str.cat(sep=' ')
-if not comments_text.strip():  # Check if comments_text is empty or only contains spaces
-    print("Warning: comments_text is empty after cleaning!")
-else:
-    vectorizer = CountVectorizer(token_pattern=r'\b\w+\b')  # Token pattern to capture words
-    X_comments = vectorizer.fit_transform([comments_text])
-    comment_keywords = vectorizer.get_feature_names_out()  # Extract unique words from comments
-
-    # Filter out fashion-related keywords to get non-fashion-related keywords
-    non_fashion_keywords = [kw for kw in comment_keywords if kw not in fashion_keywords]
-
-    # Create DataFrames for fashion and non-fashion keywords
-    non_fashion_df = pd.DataFrame(non_fashion_keywords, columns=['keyword'])
-    non_fashion_df['label'] = 0  # Label as non-fashion-related
-
-    # Combine fashion and non-fashion keywords into a single DataFrame
-    combined_df = pd.concat([fashion_df, non_fashion_df]).reset_index(drop=True)
-
-    # Check the content of the final DataFrame
-    print("Combined DataFrame Info:")
-    print(combined_df.info())  # Provides a summary of the DataFrame
-    # Show the first 10 rows where label is 1 (fashion-related)
-    print("\nFirst 10 rows where label is 1 (Fashion-related):")
-    print(combined_df[combined_df['label'] == 1].head(10))
-    # Show the first 10 rows where label is 0 (Non-fashion-related)
-    print("\nFirst 10 rows where label is 0 (Non-Fashion-related):")
-    print(combined_df[combined_df['label'] == 0].head(10))
-
-train_df, test_df = train_test_split(combined_df, test_size=0.2, random_state=42)
-
-class KeywordDataset(Dataset):
-    def __init__(self, keywords, labels, tokenizer, max_len):
-        self.keywords = keywords
-        self.labels = labels
-        self.tokenizer = tokenizer
-        self.max_len = max_len
-
-    def __len__(self):
-        return len(self.keywords)
-
-    def __getitem__(self, idx):
-        keyword = str(self.keywords[idx])
-        label = self.labels[idx]
-        encoding = self.tokenizer.encode_plus(
-            keyword,
-            add_special_tokens=True,
-            max_length=self.max_len,
-            return_token_type_ids=False,
-            padding='max_length',
-            truncation=True,
-            return_attention_mask=True,
-            return_tensors='pt',
-        )
-
-        return {
-            'input_ids': encoding['input_ids'].flatten(),
-            'attention_mask': encoding['attention_mask'].flatten(),
-            'labels': torch.tensor(label, dtype=torch.long)
-        }
-
-# Load BERT tokenizer
-tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')
-
-# Create datasets
-MAX_LEN = 16
-train_dataset = KeywordDataset(
-    keywords=train_df['keyword'].values,
-    labels=train_df['label'].values,
-    tokenizer=tokenizer,
-    max_len=MAX_LEN
-)
-
-test_dataset = KeywordDataset(
-    keywords=test_df['keyword'].values,
-    labels=test_df['label'].values,
-    tokenizer=tokenizer,
-    max_len=MAX_LEN
-)
-
-model = BertForSequenceClassification.from_pretrained('bert-base-chinese', num_labels=2)
-
-training_args = TrainingArguments(
-    output_dir='./results',
-    num_train_epochs=4,
-    per_device_train_batch_size=16,
-    per_device_eval_batch_size=16,
-    warmup_steps=500,
-    weight_decay=0.01,
-    logging_dir='./logs',
-    logging_steps=10,
-    evaluation_strategy='epoch'
-)
-
-trainer = Trainer(
-    model=model,
-    args=training_args,
-    train_dataset=train_dataset,
-    eval_dataset=test_dataset,
-    compute_metrics=lambda p: {
-        'accuracy': accuracy_score(p.label_ids, p.predictions.argmax(-1)),
-        'precision': precision_score(p.label_ids, p.predictions.argmax(-1)),
-        'recall': recall_score(p.label_ids, p.predictions.argmax(-1)),
-        'f1': f1_score(p.label_ids, p.predictions.argmax(-1)),
-    }
-)
-
-trainer.train()
-
-trainer.evaluate()
-
-from torch.utils.data import DataLoader, TensorDataset
-
-# Ensure that the model is on the correct device (GPU if available, otherwise CPU)
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model.to(device)
-
-def identify_fashion_related(text_series, tokenizer, model, batch_size=16, max_len=16):
-    # Convert text_series to a DataLoader for batch processing
-    inputs = tokenizer(text_series.tolist(), padding=True, truncation=True, max_length=max_len, return_tensors='pt')
-    input_ids = inputs['input_ids'].to(device)
-    attention_mask = inputs['attention_mask'].to(device)
-
-    # Create a DataLoader to iterate over the data in batches
-    dataset = TensorDataset(input_ids, attention_mask)
-    dataloader = DataLoader(dataset, batch_size=batch_size)
-
-    predictions = []
-    model.eval()  # Set the model to evaluation mode
-    with torch.no_grad():  # Disable gradient computation to save memory
-        for batch in dataloader:
-            batch_input_ids, batch_attention_mask = batch
-            outputs = model(input_ids=batch_input_ids, attention_mask=batch_attention_mask)
-            batch_predictions = torch.argmax(outputs.logits, dim=1)
-            predictions.extend(batch_predictions.cpu().numpy())
-
-    return torch.tensor(predictions)
-
-# Apply to post_title and post_content
-poster_df['title_fashion_related'] = identify_fashion_related(poster_df['post_title_clean'], tokenizer, model)
-poster_df['content_fashion_related'] = identify_fashion_related(poster_df['post_content_clean'], tokenizer, model)
-
-print(poster_df[['post_title', 'title_fashion_related', 'post_content', 'content_fashion_related']])
-
-# Save the results to a new DataFrame with selected columns
-results_df = poster_df[['post_title', 'title_fashion_related', 'post_content', 'content_fashion_related']]
-
-# Save the final results to a CSV file
-results_df.to_csv('/home/disk1/red_disk1/Multimodal_MKT/fashion_related_results.csv', index=False)
-
-print("Results saved to 'fashion_related_results.csv'")
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# BERT-based Fashion-word-check Model\n",
+    "### Goal: \n",
+    "- To fine-tune a BERT-based model to identify fashion-related words in the 'post_title' and 'post_content' columns using the labeled data from topics0611.csv\n",
+    "### Required Data:\n",
+    "- topics0611.csv: Contains the labeled fashion-related keywords in the 'keyword group' column\n",
+    "- poster_test_fashion_nlpclean.csv: Contains the columns 'post_title', 'post_content', and 'post_comments'. I use 'post_title' and 'post_content' to identify fashion-related words, while 'post_comments' might provide non-fashion-related examples\n",
+    "### Steps to Fine-Tune the BERT Model:\n",
+    "#### 1. Prepare the Dataset:\n",
+    "- Extract fashion-related keywords from topics0611.csv\n",
+    "- Use the 'post_title', 'post_content', and 'post_comments' columns from poster_test_fashion_nlpclean.csv to generate labeled data for training\n",
+    "#### 2. Tokenization and Data Preparation:\n",
+    "- Tokenize the text using a Chinese BERT tokenizer (bert-base-chinese)\n",
+    "- Prepare the dataset for BERT, labeling fashion-related terms from the 'keyword group' and non-fashion-related terms based on 'post_comments' or by excluding fashion keywords from the other columns\n",
+    "#### 3. Model Fine-Tuning:\n",
+    "- Fine-tune the BERT model using the prepared dataset\n",
+    "- Train the model to classify whether a term or sentence is fashion-related\n",
+    "#### 4. Evaluation:\n",
+    "- Evaluate the model on a validation set to ensure it correctly identifies fashion-related content\n",
+    "#### 5. Inference:\n",
+    "- Apply the model to the 'post_title' and 'post_content' columns to identify fashion-related terms\n",
+    "import pandas as pd\n",
+    "import torch\n",
+    "from transformers import BertTokenizer, BertForSequenceClassification\n",
+    "from transformers import Trainer, TrainingArguments\n",
+    "from sklearn.model_selection import train_test_split\n",
+    "from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score\n",
+    "from torch.utils.data import Dataset\n",
+    "from sklearn.feature_extraction.text import CountVectorizer  \n",
+    "\n",
+    "##### Step 1: Load Data\n",
+    "topics_file = '/home/disk1/red_disk1/Multimodal_MKT/topics0611.csv'\n",
+    "posts_file = '/home/disk1/red_disk1/Multimodal_MKT/test/poster_test_fashion_nlpclean.csv'\n",
+    "\n",
+    "topics_df = pd.read_csv(topics_file)\n",
+    "posts_df = pd.read_csv(posts_file)\n",
+    "##### Step 1.1 Data cleaning\n",
+    "import pandas as pd\n",
+    "import re\n",
+    "import emoji\n",
+    "import jieba\n",
+    "\n",
+    "# Load stopwords from the provided file\n",
+    "with open('/home/disk1/red_disk1/Multimodal_MKT/stopwords_cn.txt', 'r', encoding='utf-8') as f:\n",
+    "    stopwords = set(f.read().splitlines())\n",
+    "\n",
+    "# Load the poster_test_fashion_nlpclean.csv file\n",
+    "poster_df = pd.read_csv('/home/disk1/red_disk1/Multimodal_MKT/test/poster_test_fashion_nlpclean.csv')\n",
+    "\n",
+    "# Remove duplicate rows based on poster_id and post_id\n",
+    "poster_df = poster_df.drop_duplicates(subset=['poster_id', 'post_id'])\n",
+    "\n",
+    "# Ensure that the post_title and post_content columns are filled\n",
+    "poster_df['post_title'] = poster_df['post_title'].fillna('')\n",
+    "poster_df['post_content'] = poster_df['post_comment_content'].fillna('')\n",
+    "\n",
+    "# Combine titles and content for searching\n",
+    "poster_df['combined_text'] = poster_df['post_title'] + ' ' + poster_df['post_content']\n",
+    "\n",
+    "# Function for text cleaning\n",
+    "def clean_text(text, stopwords):\n",
+    "    # Convert emojis to text\n",
+    "    text = emoji.demojize(text)\n",
+    "    \n",
+    "    # Remove specific patterns\n",
+    "    text = re.sub(r'- 小红书,,', '', text)\n",
+    "    text = re.sub(r',,\\d{2}-\\d{2},,', '', text)\n",
+    "    text = re.sub(r'#', ' ', text)\n",
+    "    \n",
+    "    # Remove digits\n",
+    "    text = re.sub(r'\\d+', '', text)\n",
+    "    \n",
+    "    # Remove special characters\n",
+    "    cleaned_text = ''.join(char for char in text if char.isalnum() or char.isspace())\n",
+    "    \n",
+    "    # Tokenize\n",
+    "    words = jieba.cut(cleaned_text)\n",
+    "    \n",
+    "    # Remove stopwords\n",
+    "    filtered_words = [word for word in words if word not in stopwords]\n",
+    "    \n",
+    "    return ' '.join(filtered_words)\n",
+    "\n",
+    "# Apply data cleaning to post_title, post_content, and post_comments\n",
+    "poster_df['post_title_clean'] = poster_df['post_title'].apply(lambda x: clean_text(x, stopwords))\n",
+    "poster_df['post_content_clean'] = poster_df['post_content'].apply(lambda x: clean_text(x, stopwords))\n",
+    "poster_df['post_comments_clean'] = poster_df['post_comment_content'].fillna('').apply(lambda x: clean_text(str(x), stopwords))\n",
+    "##### Step 2: Prepare Fashion and Non-Fashion Keywords\n",
+    "\n",
+    "# Load the topics0611.csv file containing fashion-related keywords\n",
+    "topics_df = pd.read_csv('/home/disk1/red_disk1/Multimodal_MKT/topics0611.csv')\n",
+    "\n",
+    "# Extract fashion-related keywords from the 'keyword group' column\n",
+    "fashion_keywords = topics_df['keyword group'].str.lower().unique()\n",
+    "fashion_df = pd.DataFrame(fashion_keywords, columns=['keyword'])\n",
+    "fashion_df['label'] = 1  # Label as fashion-related\n",
+    "\n",
+    "# Check the content of 'post_comments_clean' before vectorization\n",
+    "comments_text = poster_df['post_comments_clean'].fillna('').str.cat(sep=' ')\n",
+    "if not comments_text.strip():  # Check if comments_text is empty or only contains spaces\n",
+    "    print(\"Warning: comments_text is empty after cleaning!\")\n",
+    "else:\n",
+    "    vectorizer = CountVectorizer(token_pattern=r'\\b\\w+\\b')  # Token pattern to capture words\n",
+    "    X_comments = vectorizer.fit_transform([comments_text])\n",
+    "    comment_keywords = vectorizer.get_feature_names_out()  # Extract unique words from comments\n",
+    "\n",
+    "    # Filter out fashion-related keywords to get non-fashion-related keywords\n",
+    "    non_fashion_keywords = [kw for kw in comment_keywords if kw not in fashion_keywords]\n",
+    "\n",
+    "    # Create DataFrames for fashion and non-fashion keywords\n",
+    "    non_fashion_df = pd.DataFrame(non_fashion_keywords, columns=['keyword'])\n",
+    "    non_fashion_df['label'] = 0  # Label as non-fashion-related\n",
+    "\n",
+    "    # Combine fashion and non-fashion keywords into a single DataFrame\n",
+    "    combined_df = pd.concat([fashion_df, non_fashion_df]).reset_index(drop=True)\n",
+    "\n",
+    "    # Check the content of the final DataFrame\n",
+    "    print(\"Combined DataFrame Info:\")\n",
+    "    print(combined_df.info())  # Provides a summary of the DataFrame\n",
+    "    # Show the first 10 rows where label is 1 (fashion-related)\n",
+    "    print(\"\\nFirst 10 rows where label is 1 (Fashion-related):\")\n",
+    "    print(combined_df[combined_df['label'] == 1].head(10))\n",
+    "    # Show the first 10 rows where label is 0 (Non-fashion-related)\n",
+    "    print(\"\\nFirst 10 rows where label is 0 (Non-Fashion-related):\")\n",
+    "    print(combined_df[combined_df['label'] == 0].head(10))\n",
+    "\n",
+    "#### Step 3: Train-Test Split\n",
+    "\n",
+    "train_df, test_df = train_test_split(combined_df, test_size=0.2, random_state=42)\n",
+    "\n",
+    "#### Step 4: Prepare Dataset for BERT\n",
+    "\n",
+    "class KeywordDataset(Dataset):\n",
+    "    def __init__(self, keywords, labels, tokenizer, max_len):\n",
+    "        self.keywords = keywords\n",
+    "        self.labels = labels\n",
+    "        self.tokenizer = tokenizer\n",
+    "        self.max_len = max_len\n",
+    "\n",
+    "    def __len__(self):\n",
+    "        return len(self.keywords)\n",
+    "\n",
+    "    def __getitem__(self, idx):\n",
+    "        keyword = str(self.keywords[idx])\n",
+    "        label = self.labels[idx]\n",
+    "        encoding = self.tokenizer.encode_plus(\n",
+    "            keyword,\n",
+    "            add_special_tokens=True,\n",
+    "            max_length=self.max_len,\n",
+    "            return_token_type_ids=False,\n",
+    "            padding='max_length',\n",
+    "            truncation=True,\n",
+    "            return_attention_mask=True,\n",
+    "            return_tensors='pt',\n",
+    "        )\n",
+    "\n",
+    "        return {\n",
+    "            'input_ids': encoding['input_ids'].flatten(),\n",
+    "            'attention_mask': encoding['attention_mask'].flatten(),\n",
+    "            'labels': torch.tensor(label, dtype=torch.long)\n",
+    "        }\n",
+    "\n",
+    "# Load BERT tokenizer\n",
+    "tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')\n",
+    "\n",
+    "# Create datasets\n",
+    "MAX_LEN = 16\n",
+    "train_dataset = KeywordDataset(\n",
+    "    keywords=train_df['keyword'].values,\n",
+    "    labels=train_df['label'].values,\n",
+    "    tokenizer=tokenizer,\n",
+    "    max_len=MAX_LEN\n",
+    ")\n",
+    "\n",
+    "test_dataset = KeywordDataset(\n",
+    "    keywords=test_df['keyword'].values,\n",
+    "    labels=test_df['label'].values,\n",
+    "    tokenizer=tokenizer,\n",
+    "    max_len=MAX_LEN\n",
+    ")\n",
+    "\n",
+    "##### Step 5: Load BERT model\n",
+    "\n",
+    "model = BertForSequenceClassification.from_pretrained('bert-base-chinese', num_labels=2)\n",
+    "\n",
+    "##### Step 6: Training Arguments and Trainer\n",
+    "\n",
+    "training_args = TrainingArguments(\n",
+    "    output_dir='./results',\n",
+    "    num_train_epochs=4,\n",
+    "    per_device_train_batch_size=16,\n",
+    "    per_device_eval_batch_size=16,\n",
+    "    warmup_steps=500,\n",
+    "    weight_decay=0.01,\n",
+    "    logging_dir='./logs',\n",
+    "    logging_steps=10,\n",
+    "    evaluation_strategy='epoch'\n",
+    ")\n",
+    "\n",
+    "trainer = Trainer(\n",
+    "    model=model,\n",
+    "    args=training_args,\n",
+    "    train_dataset=train_dataset,\n",
+    "    eval_dataset=test_dataset,\n",
+    "    compute_metrics=lambda p: {\n",
+    "        'accuracy': accuracy_score(p.label_ids, p.predictions.argmax(-1)),\n",
+    "        'precision': precision_score(p.label_ids, p.predictions.argmax(-1)),\n",
+    "        'recall': recall_score(p.label_ids, p.predictions.argmax(-1)),\n",
+    "        'f1': f1_score(p.label_ids, p.predictions.argmax(-1)),\n",
+    "    }\n",
+    ")\n",
+    "\n",
+    "##### Step 7: Train the model\n",
+    "\n",
+    "trainer.train()\n",
+    "\n",
+    "##### Step 8: Evaluate the model\n",
+    "\n",
+    "trainer.evaluate()\n",
+    "\n",
+    "##### Step 9: Apply model to post_title and post_content\n",
+    "\n",
+    "from torch.utils.data import DataLoader, TensorDataset\n",
+    "\n",
+    "# Ensure that the model is on the correct device (GPU if available, otherwise CPU)\n",
+    "device = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")\n",
+    "model.to(device)\n",
+    "\n",
+    "def identify_fashion_related(text_series, tokenizer, model, batch_size=16, max_len=16):\n",
+    "    # Convert text_series to a DataLoader for batch processing\n",
+    "    inputs = tokenizer(text_series.tolist(), padding=True, truncation=True, max_length=max_len, return_tensors='pt')\n",
+    "    input_ids = inputs['input_ids'].to(device)\n",
+    "    attention_mask = inputs['attention_mask'].to(device)\n",
+    "\n",
+    "    # Create a DataLoader to iterate over the data in batches\n",
+    "    dataset = TensorDataset(input_ids, attention_mask)\n",
+    "    dataloader = DataLoader(dataset, batch_size=batch_size)\n",
+    "\n",
+    "    predictions = []\n",
+    "    model.eval()  # Set the model to evaluation mode\n",
+    "    with torch.no_grad():  # Disable gradient computation to save memory\n",
+    "        for batch in dataloader:\n",
+    "            batch_input_ids, batch_attention_mask = batch\n",
+    "            outputs = model(input_ids=batch_input_ids, attention_mask=batch_attention_mask)\n",
+    "            batch_predictions = torch.argmax(outputs.logits, dim=1)\n",
+    "            predictions.extend(batch_predictions.cpu().numpy())\n",
+    "\n",
+    "    return torch.tensor(predictions)\n",
+    "\n",
+    "# Apply to post_title and post_content\n",
+    "poster_df['title_fashion_related'] = identify_fashion_related(poster_df['post_title_clean'], tokenizer, model)\n",
+    "poster_df['content_fashion_related'] = identify_fashion_related(poster_df['post_content_clean'], tokenizer, model)\n",
+    "\n",
+    "print(poster_df[['post_title', 'title_fashion_related', 'post_content', 'content_fashion_related']])\n",
+    "\n",
+    "# Save the results to a new DataFrame with selected columns\n",
+    "results_df = poster_df[['post_title', 'title_fashion_related', 'post_content', 'content_fashion_related']]\n",
+    "\n",
+    "# Save the final results to a CSV file\n",
+    "results_df.to_csv('/home/disk1/red_disk1/Multimodal_MKT/fashion_related_results.csv', index=False)\n",
+    "\n",
+    "print(\"Results saved to 'fashion_related_results.csv'\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "language_info": {
+   "name": "python"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
