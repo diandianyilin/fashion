@@ -1,4 +1,5 @@
 # tfashion - A model to identify fashion-related words
+see [tfashion.ipynb]()
 ## Step 1. Get a non-fashion Chinese corpus
 - Chinese Wikipedia Dump
 - Use WikiExtractor to convert the XML dump into plain text
@@ -24,17 +25,18 @@
 
 ## Step 4. Evaluate the Model
  - evaluation resutls:
+   
 ![Screenshot 2024-08-31 at 19 56 45](https://github.com/user-attachments/assets/fb94593b-943a-45f4-b535-7e56b91a3a40)
 
 ![Screenshot 2024-08-31 at 19 56 59](https://github.com/user-attachments/assets/debace4e-2335-4118-99c6-5f59dac7947b)
 
 ## Step 5. Apply the model
 - prepare post data
-  - input: poster_test_fashion_nlpclean.csv
+  - input: [poster_test_fashion_nlpclean.csv](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_devlop/poster_test_fashion_nlpclean.csv)
   - Combine 'post_title' and 'post_content' into 'post_text'
   - Clean and Tokenize 'post_text'
 - Filter Non-Fashion Words Using the Model
-- output: post_filtered.csv
+- output: [post_filtered.csv]()
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
