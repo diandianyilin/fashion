@@ -24,6 +24,9 @@
 
 ## Step 4. Evaluate the Model
  - evaluation resutls:
+![Screenshot 2024-08-31 at 19 56 45](https://github.com/user-attachments/assets/fb94593b-943a-45f4-b535-7e56b91a3a40)
+
+![Screenshot 2024-08-31 at 19 56 59](https://github.com/user-attachments/assets/debace4e-2335-4118-99c6-5f59dac7947b)
 
 ## Step 5. Apply the model
 - prepare post data
