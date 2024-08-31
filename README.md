@@ -23,3 +23,12 @@
 - Check for Duplicates
 
 ## Step 4. Evaluate the Model
+ - evaluation resutls:
+
+## Step 5. Apply the model
+- prepare post data
+  - input: poster_test_fashion_nlpclean.csv
+  - Combine 'post_title' and 'post_content' into 'post_text'
+  - Clean and Tokenize 'post_text'
+- Filter Non-Fashion Words Using the Model
+- output: post_filtered.csv
