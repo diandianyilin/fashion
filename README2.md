@@ -1,7 +1,7 @@
 # tfashion2.0 - A model to identify fashion-related words (hybrid approach)
 - note:
   - BERT is generally better suited for sentence-level tasks rather than word-level classification.
-  - balanced dataset of fashion and non-fashion corpras is important
+  - balanced dataset of fashion and non-fashion corpora is important
 - hybrid approach: using BERT to classify the fashion relevance of larger segments (phrases or sentences) instead of individual words, followed by RAKE (keyword extraction technique) to filter out non-fashion words.
 
 ## Steps
