@@ -25,8 +25,22 @@
 ## Step 4. Evaluate the Model
  - evaluation resutls:
 
-![Screenshot 2024-09-02 at 15 04 43](https://github.com/user-attachments/assets/eccae477-14db-4121-a828-01372b9a18cc)
-![Screenshot 2024-09-02 at 15 05 20](https://github.com/user-attachments/assets/3beac766-70cb-499d-8f89-19049e5da7cb)
+![Screenshot 2024-09-03 at 20 07 21](https://github.com/user-attachments/assets/8bd1be1f-91f7-4fc1-9c20-b69efc0015bc)
+![Screenshot 2024-09-03 at 20 07 42](https://github.com/user-attachments/assets/fe9eca3b-1579-4144-a626-06086c0be387)
+#### Possible Conclusions:
+##### Overfitting:  
+The increase in validation loss while the training loss continues to decrease is a common sign of overfitting. This means that the model is starting to memorize the training data rather than generalizing to unseen data.
+##### Early Stopping:  
+The model might have achieved its best performance after Epoch 1 or 2. Continuing to train beyond this point could lead to overfitting.
+#### Metrics Breakdown:
+##### Accuracy: 0.9449  
+High Accuracy: The model is correctly predicting a large proportion of the total instances. However, accuracy can be misleading, especially in imbalanced datasets.
+##### Precision: 0.6518  
+Moderate Precision: When the model predicts a positive class (e.g., fashion-related content), it is correct 65.18% of the time. This is a reasonable precision, but there's room for improvement.
+##### Recall: 0.0978  
+Low Recall: The model is identifying only 9.78% of the actual positive instances. This suggests that the model is missing many true positives, meaning it has a high number of false negatives.
+##### F1 Score: 0.1700  
+Low F1 Score: The F1 score, which balances precision and recall, is quite low. This indicates that the model is not performing well in identifying the positive class.
 
 ## Step 5. Apply the model
 - prepare post data
