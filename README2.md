@@ -14,3 +14,6 @@
 - BERT is used at the sentence level to classify whether a text is fashion-related.
 - RAKE is applied to extract keywords from the fashion-related sentences.
 - Finally, fashion-related keywords are filtered using a lexicon (from topics0611_filtered.csv) to ensure non-fashion keywords are removed.
+
+## model performance
+![Screenshot 2024-09-04 at 17 21 27](https://github.com/user-attachments/assets/936ba63a-cdee-4de7-a83d-53a54ada97ae)
