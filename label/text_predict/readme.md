@@ -1,14 +1,6 @@
 
 
 
-1. 人工定义general的dictionary（并且发到群里面check）
-2. 利用general的后缀，分词得到specific的dictionary，(注意长尾分布也保留)
-- 用我们之前识别出来的那个详细版的dictionary train一个模型，从而可以判断每个词组是不是服装穿搭相关的
-3.1 方法一：提取出每个post的specific的key words后，进行embedding和cluster（含多模态），每个cluster作为所属category，计算每个月每个cluster的比例作为proportion。
-3.2 方法二：直接将每个post的specific的key words 作为所属category，统计key words的频率作为proportion。(每个post可能属于多个category)
-4. visualization的重点是展示提取的key words是否make sense，有没有奇怪的成分。
-
-
 # 1. 开发模型
 - 预测specific的dictionary哪些单词和风格相关的
 
