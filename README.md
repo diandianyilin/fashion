@@ -19,6 +19,8 @@
   1. 做自己的黑粉 少女感smilingfacewithhearts 蝴蝶结元素好少女缎面雪纺裙嘎嘎好穿 粉黑配色 超短裙 少女感穿搭 泡泡袖 粉色少女心 粉色 蝴蝶结 黑粉配色 半身裙']
   2. 可爱遛狗穿搭 大学生 穿搭 夏季短袖 春季穿搭 气质穿搭 小个子穿搭 日常穿搭 ootd每日穿搭 每日穿搭 
   3. []
+- Number of empty values in 'filtered_fashion_keywords': 6613
+- Number of non-empty values in 'filtered_fashion_keywords': 9009
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
 # tfashion1.0 - A model to filter fashion-related words
