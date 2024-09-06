@@ -25,13 +25,13 @@
 ![Screenshot 2024-09-06 at 11 10 57](https://github.com/user-attachments/assets/f4f43533-3473-4693-bb7a-b41dab7e3ea8)
 - Number of non-empty values in 'filtered_fashion_keywords':
 - Examples of original post text:
-  1. kk
-  2. kk
-  3. ll
+  1. 🖤160体制内通勤穿搭｜秋冬穿一身高级灰黑🩶 层层叠叠的灰黑色系 大衣就是氛围感拿捏了～ 喜欢有点小细节的同色系穿搭 . . #秋冬穿搭 #通勤穿搭 #体制内穿搭 #灰色大衣 #灰色大衣这么穿 #大衣穿搭 #羊毛大衣 #好看的大衣 #羊毛羊绒大衣 #职场通勤穿搭 #我的上班通勤穿搭
+  2. 𝕭𝖑𝖆𝖈𝖐 🐈‍⬛‧₊˚⋆♡ #宝宝辅食 #每日穿搭#WEIRDMARKET
+  3. Ariseism你别便宜的太离谱！！！ 新品上线啦～ 这期新品都好喜欢好喜欢～ 辣妹黑色超短裤也有啦～ #ariseism成都 #ariseism #ARM
 - Examples of filtered post text:
-  1. ll
-  2. ll
-  3. ll
+  1. blackheart体制内通勤穿搭秋冬穿一身高级灰黑greyheart 层层叠叠的灰黑色系 大衣就是氛围感拿捏了 喜欢有点小细节的同色系穿搭 秋冬穿搭 通勤穿搭 体制内穿搭 灰色大衣 灰色大衣这么穿 大衣穿搭 羊毛大衣 好看的大衣 羊毛羊绒大衣 职场通勤穿搭 我的上班通勤穿搭
+  2. 𝕭𝖑𝖆𝖈𝖐 blackcat 宝宝辅食 每日穿搭 weirdmarket
+  3. ariseism你别便宜的太离谱 新品上线啦 这期新品都好喜欢好喜欢 辣妹黑色超短裤也有啦 ariseism成都 ariseism arm
 
 #### Step 1.1 Expand fashion keyword list using RAKE (Rapid Automatic Keyword Extraction)
 1. Tokenize the keyword group column to break down fashion phrases into individual words.
@@ -54,18 +54,18 @@
 
 #### Step 2 Train the Model
 - Split the Data into Training and Validation Sets
-- Fine-Tune BERT
+- Fine-Tune BERT [fashion_bert_model]()
 
 #### Step 3 Apply the Model
 - prepare post data
   - Combine 'post_title' and 'post_content' into 'post_text'
   - Clean 'post_text'
-- Use the Trained Model to Classify Fashion-Related Content
+- Use the Trained Model to Classify Fashion-Related Content [post_filtered_bert.csv]()
 
 #### Step 4 Apply Keyword Extraction (RAKE) on Fashion-Related Texts
 - Initialize RAKE keyword extractor
 - Function to extract fashion-related keywords using RAKE
-- Apply RAKE on the fashion_text column to extract keywords
+- Apply RAKE on the fashion_text column to extract keywords 
 - Save the final DataFrame with fashion-related keywords to [post_filtered_rake.csv]()
 
 #### Step 5 Apply Soft Matching
