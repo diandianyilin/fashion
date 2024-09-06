@@ -5,7 +5,7 @@
 - hybrid approach: using BERT to classify the fashion relevance of larger segments (phrases or sentences) instead of individual words, followed by RAKE (keyword extraction technique) and a softer matching to filter out non-fashion words.
 
 ## Steps
-1. Expand fashion corpus [topics_filtered.csv](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_devlop/topics_filtered.csv) and non fashion-corpus (chinese wikipedia)
+1. Expand fashion corpus [topics_filtered.csv](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_devlop/topics_filtered.csv) and prepare nonfashion-corpus (chinese wikipedia)
 2. Fine-tune BERT on the fashion corpus [topics_filtered.csv](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_devlop/topics_filtered.csv) for phrase-level or sentence-level classification.  
 3. Classify the fashion-relatedness of each post in cleaned_post_text using BERT.  
 4. Extract fashion-related keywords using RAKE from fashion-classified text.  
