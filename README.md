@@ -1,3 +1,5 @@
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
 # tfashion1.5 - A model to filter fashion-related words
 ## Softer Matching - a matching strategy based on cosine similarity using BERT embeddings
 - input: topics_filtered.csv (expanded), post_cleaned.csv
