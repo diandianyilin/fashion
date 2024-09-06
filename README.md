@@ -1,4 +1,27 @@
-# tfashion - A model to identify fashion-related words
+# tfashion1.5 - A model to filter fashion-related words
+## Softer Matching - a matching strategy based on cosine similarity using BERT embeddings
+- input: topics_filtered.csv (expanded), post_cleaned.csv
+- output: post_filtered.csv
+
+### Explanation
+- BERT-based Embeddings: We get the word embeddings for each word using BERT.
+- Cosine Similarity: For each word in the fashion_keywords column, we calculate the cosine similarity to every word in the fashion lexicon.
+- Soft Threshold: If the cosine similarity exceeds the threshold (set to 0.6), we consider the word "fashion-related" and include it in the final list.
+- Softer Match: Instead of a hard match (exact word match), this approach allows words that are close in meaning to be considered fashion-related.
+
+### Resuls from soft threshold 0.8
+- examples of original post text:
+  1. 做自己的黑粉 少女感🥰 蝴蝶结元素好少女、缎面雪纺裙嘎嘎好穿#粉黑配色 #超短裙 #少女感穿搭  #泡泡袖 #粉色少女心 #粉色 #蝴蝶结 #黑粉配色 #半身裙,
+  2. 可爱遛狗穿搭～ #大学生 #穿搭 #夏季短袖 #春季穿搭 #气质穿搭 #小个子穿搭 #日常穿搭 #ootd每日穿搭 #每日穿搭,
+  3. 国民初恋裴秀智牛仔裤配衬衫，韩系松弛感绝 裴姐不愧是南韩国民初恋，气质超绝！美得毫不费力，穿着简简单单的衬衫和牛仔裤真的好像在拍韩剧，最后再搭上披肩增加层次感，水洗蓝小香风设计感牛仔裤➕质感好的衬衫跟着裴秀智穿这种松弛感，同事说我上班穿得像去拍韩剧#裴秀智#韩系穿搭 #衬衫 #披肩 #韩女 #missa  #女明星穿搭 #女明星私服 #不费力气的穿搭 #简约穿搭 #小香风牛仔裤 #ins博主穿搭 #松弛感 #跟着明星学穿搭 #牛仔裤 #复古牛仔裤 #初恋#气质穿搭
+
+- examples of filtered post text:
+  1. 做自己的黑粉 少女感smilingfacewithhearts 蝴蝶结元素好少女缎面雪纺裙嘎嘎好穿 粉黑配色 超短裙 少女感穿搭 泡泡袖 粉色少女心 粉色 蝴蝶结 黑粉配色 半身裙']
+  2. 可爱遛狗穿搭 大学生 穿搭 夏季短袖 春季穿搭 气质穿搭 小个子穿搭 日常穿搭 ootd每日穿搭 每日穿搭 
+  3. []
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+# tfashion1.0 - A model to filter fashion-related words
 see [tfashion.ipynb](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_devlop/tfashion.ipynb)
 ## Step 1. Get a non-fashion Chinese corpus
 - Chinese Wikipedia Dump
@@ -38,7 +61,8 @@ see [tfashion.ipynb](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_de
 - Filter Non-Fashion Words Using the Model
 - output: [post_filtered.csv](https://github.com/dengxw66/Multimodal_MKT/blob/diandian_devlop/post_filtered.csv)
 
-
+### Results:
+- empty values in column fashion_text because the model works in the whole phrase not the individual words.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Clustering based on text
