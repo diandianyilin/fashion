@@ -11,8 +11,7 @@
 
 核心矛盾：
 - 引入'身体'是双刃剑：
-    - 如果只使用'衣服'聚类，那么模型会当做"一块衣服布"，无法理解图片语义，基本只根据颜色分类，无法识别风格。而且得到的聚类数目过少。[cloth_cluster.md](https://github.com/diandianyilin/fashion/blob/October/cloth_cluster.md)    
-        [visual2.md](https://github.com/diandianyilin/fashion/blob/dxw_devlop/model/visual/visual2.md)
+    - 如果只使用'衣服'聚类，那么模型会当做"一块衣服布"，无法理解图片语义，基本只根据颜色分类，无法识别风格。而且得到的聚类数目过少。[cloth_cluster.md](https://github.com/diandianyilin/fashion/blob/October/cloth_cluster.md)     [visual2.md](https://github.com/diandianyilin/fashion/blob/dxw_devlop/model/visual/visual2.md)
     - 如果使用人体聚类（衣服+身体姿态），模型能通过身体和姿态更好的识别语义，从而得到更合理聚类数量，但是其中也会引入错误聚类（比如明明衣服不同，但是身体姿态一致，也会被当做同一类）。
 
 
