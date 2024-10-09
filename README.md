@@ -219,4 +219,4 @@
 
 ### 2.3.3 具体每个月的top5展示
 
-- 具体每个月的top5风格展示: [visualize_per_month](https://github.com/diandianyilin/fashion/October/visualize_per_month.md)
+- 具体每个月的top5风格展示: [visualize_per_month](https://github.com/diandianyilin/fashion/blob/October/visualize_per_month.md)
