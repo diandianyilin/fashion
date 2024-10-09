@@ -18,16 +18,14 @@ Fashion trends and keywords play a crucial role in influencing consumer behavior
 
 The dataset contains two categories:
 - **Fashion-related samples (positive)**: Extracted from labeled social media posts.[topics_filtered.csv](https://github.com/diandianyilin/fashion/blob/main/topics_filtered.csv)
-  - remove single Chinese characters and single English letters
-  - remove certian noninformative fashion words: e.g., '穿搭', 'OOTD', 'ootd', 'Ootd', '日常', '每日', '安利', '种草', '喜欢', '真的'
 - **Non-fashion-related samples (negative)**: Extracted from general Chinese Wikipedia text dumps.[non_fashion_texts](https://github.com/diandianyilin/fashion/tree/main/non_fashion_texts)
 
 ### Imbalance Handling
 - The initial dataset was imbalanced:
-  - **Fashion-related samples**: 43,127
-  - **Non-fashion-related samples**: 73,084
+  - **Fashion-related samples**: 52,242
+  - **Non-fashion-related samples**: 304,611
 - To address this imbalance, the non-fashion-related samples were **downsampled** to match the number of fashion-related samples, resulting in **balanced datasets**:
-  - **Downsampled Non-fashion-related samples**: 43,127
+  - **Downsampled Non-fashion-related samples**: 52,242
 
 ## Model Training
 
@@ -57,13 +55,12 @@ The dataset contains two categories:
 
 | **Epoch** | **Train Loss** | **Val Loss** | **Accuracy** | **Precision** | **Recall** | **F1 Score** |
 |:---------:|:--------------:|:------------:|:------------:|:-------------:|:----------:|:------------:|
-| 1         | 0.0910         | 0.0593       | 0.9760       | 0.9084        | 0.9309     | 0.9195       |
-| 2         | 0.0553         | 0.0553       | 0.9770       | 0.9614        | 0.8789     | 0.9183       |
-| 3         | 0.0417         | 0.0489       | 0.9801       | 0.9152        | 0.9530     | 0.9337       |
-| 4         | 0.0325         | 0.0467       | 0.9827       | 0.9369        | 0.9462     | 0.9415       |
-| 5         | 0.0262         | 0.0464       | 0.9827       | 0.9568        | 0.9244     | 0.9403       |
-| **Final** |                |              | 0.9827       | 0.9568        | 0.9244     | 0.9403       |
-
+| 1         | 0.0922         | 0.0618       | 0.9754       | 0.9172        | 0.9143     | 0.9158       |
+| 2         | 0.0546         | 0.0586       | 0.9775       | 0.9595        | 0.8829     | 0.9196       |
+| 3         | 0.0411         | 0.0471       | 0.9813       | 0.9461        | 0.9245     | 0.9352       |
+| 4         | 0.0321         | 0.0481       | 0.9826       | 0.9419        | 0.9390     | 0.9404       |
+| 5         | 0.0262         | 0.0526       | 0.9829       | 0.9455        | 0.9367     | 0.9411       |
+| **Final** |                |              | 0.9829       | 0.9455        | 0.9367     | 0.9411       |
 
 The training and validation results for each epoch are presented, with performance metrics such as precision, recall, and F1 score showing consistent improvements across the epochs.
 
