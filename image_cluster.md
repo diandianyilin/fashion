@@ -11,7 +11,7 @@
 
 核心矛盾：
 - 引入'身体'是双刃剑：
-    - 如果只使用'衣服'聚类，那么模型会当做"一块衣服布"，无法理解图片语义，基本只根据颜色分类，无法识别风格。而且得到的聚类数目过少。[cloth_cluster.md](https://github.com/diandianyilin/fashion/blob/main/cloth_cluster.md) 
+    - 如果只使用'衣服'聚类，那么模型会当做"一块衣服布"，无法理解图片语义，基本只根据颜色分类，无法识别风格。而且得到的聚类数目过少。[cloth_cluster.md](https://github.com/diandianyilin/fashion/blob/October/cloth_cluster.md)    
         [visual2.md](https://github.com/diandianyilin/fashion/blob/dxw_devlop/model/visual/visual2.md)
     - 如果使用人体聚类（衣服+身体姿态），模型能通过身体和姿态更好的识别语义，从而得到更合理聚类数量，但是其中也会引入错误聚类（比如明明衣服不同，但是身体姿态一致，也会被当做同一类）。
 
@@ -83,7 +83,7 @@
 - 下面的结果是使用silhouette得到的19类，来做聚类得到的category
 
 ### 2.3.1 19类图片类别及其对应高频关键词展示
-- 文本处理说明: [tfashion.md](https://github.com/diandianyilin/fashion/blob/main/tfashion.md)
+- 文本处理说明: [tfashion.md](https://github.com/diandianyilin/fashion/blob/October/tfashion.md)
   
 <p align="center">
     <img src="https://github.com/user-attachments/assets/f1658eae-dca5-4948-924c-b3e2bdf7b496" width="800"/>
@@ -218,7 +218,6 @@
   - Category 1（紫色）在年初（第1和第2月）进入前五名，随后退出了排名，但从5月开始又进入排名。
   - 其他类别，如Category 15（品红色）和Category 6（青色），在全年中间断性地出现，表明其受欢迎程度有所波动。
 
-
 ### 2.3.3 具体每个月的top5展示
 
-- 具体每个月的top5风格展示: [visualize_per_month](https://github.com/diandianyilin/fashion/blob/main/visualize_per_month.md)
+- 具体每个月的top5风格展示: [visualize_per_month](https://github.com/diandianyilin/fashion/October/main/visualize_per_month.md)
