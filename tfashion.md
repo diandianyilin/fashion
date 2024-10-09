@@ -95,3 +95,5 @@ The training and validation results for each epoch are presented, with performan
 | 4101        | 只美拉德包包stuffedflatbread𖧧复古棕色百搭mate大容量棕色系mediumdarkskintone滴包包撞色巧克力包包chocolatebar羊羔毛包包ewe牛仔刺绣拼接棕色包包sewingneedle哭喊中心复古格纹帆布包burrito波士顿包型复古腋下包meatonbone包包偏爱小众包小众包包大学生上课包包腋下包帆布包美拉德棕色包包复古包包秋冬百搭包包通勤包包包包分享宝宝辅食包包不重样大容量包包 | ['只美', '拉德', '包包', '复古', '棕色', '百搭', 'mate', '大容量', '撞色', '巧克力', 'chocolatebar', '羊羔', '牛仔', '刺绣', '拼接', 'sewingneedle', '中心', '格纹', '帆布包', '包型', '腋下', 'meatonbone', '偏爱', '小众', '包小众', '大学生', '上课', '秋冬', '通勤', '分享', '宝宝', '辅食', '重样'] |
 | 4394        | 攒了一个夏天的粉色growingheart我是一个爱穿粉色系的中年妇女ootd每日穿搭日常穿搭每日穿搭粉色系粉色少女心 | ['夏天', '粉色', 'growingheart', '中年妇女', 'ootd', '每日', '日常', '少女'] |
 
+
+For more examples, see: [tfashion5.ipynb](https://github.com/diandianyilin/fashion/blob/October/tfashion5.ipynb)  
