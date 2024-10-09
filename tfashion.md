@@ -96,4 +96,4 @@ The training and validation results for each epoch are presented, with performan
 | 4394        | 攒了一个夏天的粉色growingheart我是一个爱穿粉色系的中年妇女ootd每日穿搭日常穿搭每日穿搭粉色系粉色少女心 | ['夏天', '粉色', 'growingheart', '中年妇女', 'ootd', '每日', '日常', '少女'] |
 
 
-For more examples, see: [tfashion5.ipynb](https://github.com/diandianyilin/fashion/blob/October/tfashion5.ipynb)  
+For more examples, see [tfashion5.ipynb](https://github.com/diandianyilin/fashion/blob/October/tfashion5.ipynb)  
