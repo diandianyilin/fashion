@@ -1,6 +1,6 @@
 # tfashion: A Fashion-Related Text Classification Model
 
-[tfashion5.ipynb](https://github.com/diandianyilin/fashion/blob/main/tfashion5.ipynb)  
+[tfashion5.ipynb](https://github.com/diandianyilin/fashion/blob/October/tfashion5.ipynb)  
 The `tfashion` model is a **binary text classifier** designed to identify **fashion-related words** in Chinese social media posts. It leverages a **pre-trained SentenceTransformer model** (`text2vec-large-chinese`) to generate word embeddings and a **ResNet-based binary classifier** for classification.
 
 ## Overview
