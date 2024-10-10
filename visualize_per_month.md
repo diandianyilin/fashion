@@ -1,5 +1,5 @@
 ### 2.3.3 具体每个月的top5展示
-[data_visual.ipynb](https://github.com/diandianyilin/fashion/blob/main/data_visual.ipynb)  
+[data_visual.ipynb](https://github.com/diandianyilin/fashion/blob/October/data_visual.ipynb)  
 
 
 - 每个图代表一个月，分布是5*10张图片组合。5行代表top5，即每行代表同一个风格。每行10张图，即每个风格采样10张图片。
