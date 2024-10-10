@@ -1,5 +1,6 @@
 # Image Clustering and Corresponding Text
 
+[data_final.ipynb](https://github.com/diandianyilin/fashion/blob/October/data_final.ipynb)  
 
 # 1. Recap
 
